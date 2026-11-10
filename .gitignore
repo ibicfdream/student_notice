@@ -1,0 +1,22 @@
+﻿# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 虚拟环境
+.venv/
+venv/
+
+# 备份与模型（上一次误提交的内容）
+backups/
+.ocr-models/
+
+# 测试截图/日志
+*.png
+*.jpg
+*.log
+
+# IDE/本地
+.vscode/
+.idea/
+.env
