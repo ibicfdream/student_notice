@@ -1,7 +1,7 @@
 """不依赖第三方库的通知规则提取器。"""
 import re
 import unicodedata
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from categories import classify
 from task_names import EVENT_HINT, brief_subject, concise_task, short_venue, fitness_conditions
 
@@ -10,6 +10,30 @@ DATE = re.compile(r"(?<!\d)(?<!\d:)(?:(?P<y>20\d{2})\s*[年/.-]\s*)?(?P<m>\d{1,2
 CLOCK = re.compile(r"(?P<period>上午|下午|晚上|中午|凌晨)?\s*(?P<h>\d{1,2})\s*(?::\s*(?P<minute>\d{1,2})|[点时](?P<cnminute>\d{1,2})?\s*分?)(?!\d)")
 BEFORE_DATE = re.compile(r'^\s*(?:\(\s*(?:周|星期|礼拜)[一二三四五六日天1-7]\s*\)\s*)?(?:之前|前(?!后|往|夕))')
 URL = re.compile(r'https?://[^\s，。；;<>（）()“”"‘’]+')
+EMAIL_PERIOD = re.compile(r'([\w.+-]+@[\w.-]+\.(?:com|net|cn))o(?=[ \t]*(?:$|[\r\n，。；;！!?？]))', re.I)
+
+
+def current_reference_date() -> date:
+    """使用北京时间，避免主机时区影响明天、后天等日期换算。"""
+    return datetime.now(timezone(timedelta(hours=8))).date()
+
+
+def _normalize_notice_text(source: str) -> str:
+    text = unicodedata.normalize('NFKC', source).replace(',', '，')
+    text = EMAIL_PERIOD.sub(r'\1。', text)
+    # 仅修复标题开头明确机构标签的右括号误字，不替换正文中的“了”。
+    text = re.sub(
+        r'(?m)^(\s*【(?:学生会|团委|教务处|学工办|教务办))\s*了(?=\s*(?:["“「『]|关于))',
+        r'\1】', text,
+    )
+    # Tesseract 可能把日期后星期注释的左括号识别成《或<。
+    # 仅修复紧跟具体日期的星期注释，保留真正独立的相对日期。
+    return re.sub(
+        '(?P<date>' + DATE.pattern + r')\s*[（(《〈<]\s*'
+        r'(?P<weekday>(?:周|星期|礼拜)\s*[一二三四五六日天1-7])\s*[）)》〉>]',
+        lambda match: match['date'] + '(' + re.sub(r'\s+', '', match['weekday']) + ')',
+        text,
+    )
 
 
 def _time_candidates(text: str, reference: date) -> list[tuple[int, int, str]]:
@@ -19,12 +43,29 @@ def _time_candidates(text: str, reference: date) -> list[tuple[int, int, str]]:
     title_year = re.search(r'(20\d{2})\s*年(?!\s*\d{1,2}\s*月)', heading)
     context_year = int(title_year[1]) if title_year else reference.year
     candidates = []
+    explicit_year = None
     for match in DATE.finditer(text):
         # 防止把学年 2024-2025-2 的末尾误当作月日。
         if semester and match.start() < semester.end() and match.end() > semester.start():
             continue
-        year = int(match['y']) if match['y'] else (int(semester[2] if semester[3] == '2' else semester[1]) if semester else context_year)
+        if match['y']:
+            explicit_year = int(match['y'])
+        year = explicit_year if explicit_year is not None else (int(semester[2] if semester[3] == '2' else semester[1]) if semester else context_year)
         following = text[match.end():]
+        # 独立日期行可与紧邻下一行的明确动作关联，但不跨越另一日期。
+        next_line = re.match(r'^[ \t]*\r?\n[ \t]*([^\r\n]+)', following)
+        if (next_line and not DATE.search(next_line[1])
+                and re.search(r'举行|举办|开始|开讲|开赛|开会|报到|集合|截止|截至|提交|上传|报名', next_line[1])):
+            following = re.sub(r'\r?\n', ' ', following, count=1)
+        # OCR 可把日期、星期、时刻和起止词拆成多行；只接合这个时间后缀，
+        # 其余换行仍作为分句边界，避免借用下一条通知的时间。
+        time_suffix = re.match(
+            r'^\s*(?:\(\s*(?:周|星期|礼拜)\s*[一二三四五六日天1-7]\s*\)\s*)?'
+            r'(?:' + CLOCK.pattern + r'\s*)?(?:开始|启动|结束|截止|截至|之前|前(?!后|往|夕))',
+            following,
+        )
+        if time_suffix:
+            following = re.sub(r'[\r\n]', ' ', time_suffix[0]) + following[time_suffix.end():]
         if re.match(r'\s*(?:前后|左右)', following):
             # 模糊预计日期不作为单点截止或精确开始时间。
             continue
@@ -37,14 +78,26 @@ def _time_candidates(text: str, reference: date) -> list[tuple[int, int, str]]:
             value = datetime(year, int(match['m']), int(match['d']))
             if clock:
                 hour = int(clock['h'])
-                if clock['period'] in ('下午', '晚上', '中午') and hour < 12:
+                period = clock['period']
+                if not period:
+                    period_before_date = re.search(r'(上午|下午|晚上|中午|凌晨)\s*\(\s*$', text[:match.start()])
+                    if period_before_date and re.match(r'\s*\)', clause):
+                        period = period_before_date[1]
+                if period in ('下午', '晚上', '中午') and hour < 12:
                     hour += 12
-                if clock['period'] == '凌晨' and hour == 12:
+                if period == '凌晨' and hour == 12:
                     hour = 0
                 value = value.replace(hour=hour, minute=int(clock['minute'] or clock['cnminute'] or 0))
         except ValueError:
             continue
         before = re.split(r"[，。；;\n]", text[:match.start()])[-1][-16:]
+        if not before.strip():
+            previous_line = re.search(r'([^\r\n]+)\r?\n[ \t]*$', text[:match.start()])
+            if previous_line and re.fullmatch(
+                    r'\s*(?:(?:报名|提交|办理)?(?:截止(?:时间|日期)?|期限)|'
+                    r'(?:活动|会议|考试|讲座|报到|面试|集合|上课|比赛)(?:时间|日期)|'
+                    r'(?:发布|发送|推送|更新|发文)(?:时间|日期)?|落款)\s*[:：]?\s*', previous_line[1]):
+                before = previous_line[1].strip()
         # 同一句包含多个日期时，只看前一个日期之后的局部标签。
         previous_dates = list(DATE.finditer(text[:match.start()]))
         if previous_dates:
@@ -56,7 +109,7 @@ def _time_candidates(text: str, reference: date) -> list[tuple[int, int, str]]:
         exclusive_date = BEFORE_DATE.match(clause) if not clock else None
         clock_deadline = BEFORE_DATE.match(clause[clock.end():]) if clock else None
         end = bool(clock_deadline or exclusive_date or registration_end or re.search(r"截止|截至|最[迟晚]", before) or re.search(r"截止|截至|结束|之前|前(?:\s*(?:将|把|提交|完成|报送|报名|发送|交至|交到|交给|送交|递交|缴费)|\s*$)", clause))
-        start = bool(re.search(r"开始|启动|举行|举办|(?:活动|会议|考试|讲座|报到|面试|集合|上课|比赛)(?:时间|日期)|定于|将于", before + clause))
+        start = bool(re.search(r"开始|启动|举行|举办|开讲|开赛|开会|报到|集合|(?:活动|会议|考试|讲座|报到|面试|集合|上课|比赛)(?:时间|日期)|定于|将于", before + clause))
         # 无事件语义的日期可能只是聊天时间戳或通知落款，不自动填入。
         if end or start:
             if exclusive_date:
@@ -96,7 +149,8 @@ def extract_time_details(text: str, reference: date, position: int | None = None
 
 
 def extract_notice(source: str, reference: date | None = None) -> dict:
-    text = unicodedata.normalize('NFKC', source).replace(',', '，')
+    reference = reference or current_reference_date()
+    text = _normalize_notice_text(source)
     flat = re.sub(r'\s+', ' ', text).strip()
     if not flat:
         raise ValueError('通知内容不能为空')
@@ -108,27 +162,52 @@ def extract_notice(source: str, reference: date | None = None) -> dict:
         r'[\u4e00-\u9fffA-Za-z0-9]{0,16}(?:系统|平台|小程序)',
         r'问卷星|腾讯文档|金山文档|群接龙|群内接龙|纸质(?:版)?|现场提交|电子邮件|邮箱',
     ):
-        for item in re.findall(pattern, flat):
+        for match in re.finditer(pattern, flat):
+            item = match[0]
+            if re.search(r'(?:系统|平台|小程序)$', item):
+                # 关闭/维护说明不代表办理渠道；同一分句明确要求办理时仍保留。
+                prefix = re.split(r'[，。；;!?！？]', flat[:match.start()])[-1] + item
+                suffix = flat[match.end():]
+                has_action = re.search(r'登录|登陆|进入|通过|上传|提交|填报|报送', prefix)
+                status_only = re.match(r'\s*(?:将|会|已|即将|届时)?\s*(?:关闭|关停|停用|停止服务|维护)', suffix)
+                if not has_action and (status_only or re.match(r'^(?:逾期|超时|届时|到期)', item)):
+                    continue
             item = re.split(r'登录|登陆|进入|通过|请|同学|在|到', item)[-1]
             if item and item not in methods:
                 methods.append(item)
-    place = re.search(r'(?:地点|地址)\s*[:：为]?\s*([^，。；;\n]+)', text)
+    # 咨询/答疑地点不是提交或领取地点；仅从地点匹配视图移除，原文仍保留。
+    location_text = re.sub(r'(?:咨询|答疑)(?:地点|地址)\s*[:：为]?\s*[^，。；;\n]+', '', text)
+    place = re.search(r'(?:地点|地址)\s*[:：为]?\s*([^，。；;\n]+)', location_text)
     if not place:
-        place = re.search(r'(?:在|到|至)\s*([^，。；;\n]{1,25}?(?:教室|会议室|报告厅|礼堂|体育馆|办公室|[楼馆]\s*\d{2,4}(?:\s*(?:会议室|办公室|教室|室))?))', text)
+        place = re.search(r'(?:在|到|至)\s*([^，。；;\n]{1,25}?(?:教室|会议室|报告厅|招聘大厅|大厅|礼堂|体育馆|办公室|(?:服务中心|指导中心|中心)\s*(?:[A-Za-z]?\d{2,4}(?:室)?)?|[楼馆]\s*[A-Za-z]?\d{2,4}(?:\s*(?:会议室|办公室|教室|室))?))', location_text)
     record = dict(task=task, deadline=extract_time(text, reference or date.today()),
                 submit_method='；'.join(methods) or MISSING,
-                location=place[1].strip() if place else short_venue(text) or MISSING, source_text=source)
+                location=place[1].strip() if place else short_venue(location_text) or MISSING, source_text=source)
     record.update(classify(source, task))
+    email_fixes = list(EMAIL_PERIOD.finditer(source))
+    if email_fixes:
+        record['extraction_note'] = '；'.join(
+            f'邮箱末尾 o 疑似句号：{match[0]} 暂按 {match[1]} 提取，请对照原图核对'
+            for match in email_fixes
+        )
     record.update(extract_time_details(text, reference or date.today()))
-    subject = brief_subject(text)
+    candidates = _time_candidates(text, reference or date.today())
+    starts = [value for priority, _, value in candidates if priority == 1]
+    ends = [value for priority, _, value in candidates if priority == 2]
+    # 单一开始与截止组成同一办理窗口；多阶段由后续拆分器分别处理。
+    if len(starts) == len(ends) == 1 and starts[0] <= ends[0]:
+        record['start_time'] = starts[0]
+    subject = brief_subject(text) or (task if EVENT_HINT.search(task) else None)
     if subject and EVENT_HINT.search(subject) and not re.search(r'提交|上传|报送|报名|缴费|登记', subject):
         record.update(fitness_conditions(text))
         if record['submit_method'] == MISSING and record['location'] != MISSING:
             record.update(submit_method='现场参加', method_role='参与方式')
-        first_date = DATE.search(text)
+        labeled_event = re.search(r'活动(?:时间|日期)\s*[:：]\s*(.+?)(?=\n[^\n:：]{2,12}[:：]|\Z)', text, re.S)
+        event_text = labeled_event[1] if labeled_event else text
+        first_date = DATE.search(event_text)
         candidates = _time_candidates(text, reference or date.today())
         if first_date and not any(candidate[0] == 2 for candidate in candidates):
-            details, end, note = _event_interval(text[first_date.start():], reference or date.today())
+            details, end, note = _event_interval(event_text[first_date.start():], reference or date.today())
             record.update(details)
             record['time_role'] = '活动开始'
             if end != MISSING:
@@ -137,11 +216,19 @@ def extract_notice(source: str, reference: date | None = None) -> dict:
                 record['time_note'] = note
     if re.search(r'维修|报修|保修|检修', text):
         _repair_details(record, text, reference or date.today())
+    if record.get('time_role', '').endswith('开始'):
+        record.pop('start_time', None)
+    consultation_notes = [match[0].strip() for match in re.finditer(
+        r'(?:咨询|答疑)(?:地点|地址)\s*[:：为]?\s*[^，。；;\n]+', source)]
+    if consultation_notes:
+        notes = [record['service_note']] if record.get('service_note') else []
+        record['service_note'] = '；'.join(dict.fromkeys(notes + consultation_notes))
     return record
 
 
 def _event_interval(event_value: str, reference: date) -> tuple[dict, str, str]:
     """共用的活动开始/结束解析；活动结束不作为提交截止。"""
+    event_value = re.sub(r'(?<=\d)[ \t]*\r?\n\s*(?=[点时])', '', event_value)
     details = extract_time_details('活动时间：' + event_value, reference)
     event_start = details['deadline']
     event_end = MISSING
@@ -217,6 +304,18 @@ def _repair_details(record: dict, text: str, reference: date) -> None:
     if title_year:
         reference = date(int(title_year[1]), 1, 1)
     details, end, note = _event_interval(value, reference)
+    if daily and details['deadline'] != MISSING and end != MISSING:
+        # 日期窗口 + 每日时段：首日开门时刻与末日关门时刻分别绑定。
+        hours = record['service_hours']
+        daily_clocks = list(CLOCK.finditer(hours))
+        if len(daily_clocks) == 2 and re.fullmatch(r'\s*[-~～—–至到]\s*', hours[daily_clocks[0].end():daily_clocks[1].start()]):
+            daily_details, daily_end, daily_note = _event_interval(
+                details['deadline'][:10] + ' ' + hours, reference)
+            if len(daily_details['deadline']) == 16 and len(daily_end) == 16:
+                details['deadline'] = daily_details['deadline']
+                end = end[:10] + daily_end[10:]
+            else:
+                note = daily_note or '每日服务时段无效或涉及跨夜，请核对具体起止时刻。'
     prefix = '报修受理' if labeled and re.search(r'报修|保修|受理', labeled[1]) else '维修'
     record.update(details)
     record.update(time_role=prefix + '开始', end_time=end, end_time_label=prefix + '结束时间',
@@ -324,9 +423,25 @@ def _registration_and_event(source: str, text: str, whole: dict, reference: date
 def extract_notices(source: str, reference: date | None = None) -> list[dict]:
     """多次独立提交按时间和动作拆分；开始/截止组成的单一流程仍为一项。"""
     reference_explicit = reference is not None
-    reference = reference or date.today()
+    reference = reference or current_reference_date()
+    from course_table import extract_course_table
+    courses = extract_course_table(source, reference)
+    if courses is not None:
+        return courses
+    from poster_notice import extract_poster_event
+    poster = extract_poster_event(source, reference)
+    if poster is not None:
+        return poster
+    from sports_notice import extract_sports_ceremonies
+    ceremonies = extract_sports_ceremonies(source, reference)
+    if ceremonies is not None:
+        return ceremonies
     whole = extract_notice(source, reference)
-    text = unicodedata.normalize('NFKC', source).replace(',', '，')
+    text = _normalize_notice_text(source)
+    from competition_notice import extract_competition_registration
+    registration = extract_competition_registration(source, text, reference)
+    if registration is not None:
+        return registration
     from stages import extract_stages
     stages = extract_stages(source, text, whole, reference)
     if stages:
@@ -349,7 +464,9 @@ def extract_notices(source: str, reference: date | None = None) -> list[dict]:
     for index, (_, position, _) in enumerate(deadlines):
         # 只在两个时间点之间找分句边界，保留本条时间前的动作对象。
         previous = deadlines[index - 1][1] if index else 0
-        separators = list(re.finditer(r'[，。；;\n]', text[previous:position]))
+        separators = list(re.finditer(r'[，。；;]', text[previous:position]))
+        if not separators:
+            separators = list(re.finditer(r'\n', text[previous:position]))
         starts.append(previous + separators[-1].end() if separators else previous)
     records = []
     for index, (_, position, deadline) in enumerate(deadlines):
@@ -358,13 +475,20 @@ def extract_notices(source: str, reference: date | None = None) -> list[dict]:
         # 没有分句边界时不硬拆，避免把两个日期强行绑定到同一句动作。
         if starts[index] > position or (index and starts[index] <= deadlines[index - 1][1]):
             return [whole]
-        if not re.search(r'提交|发送|交至|交到|交给|送交|递交|报送|报名|缴费|完成', segment):
+        if not re.search(r'提交|发送|交至|交到|交给|送交|递交|报送|报名|缴费|完成|领取|纸质(?:版)?材料|纸版材料', segment):
             return [whole]
         row = extract_notice(segment, reference)
         row.update(extract_time_details(text, reference, position=position))
         # 通知中的多个阶段继承同一通知主题和分类，但方法/地点只来自本段。
         context = '挑战杯院赛' if '挑战杯' in text and '院' in text else '挑战杯' if '挑战杯' in text else whole['task']
-        if '纸质' in segment:
+        if '领取' in segment:
+            item = re.search(r'领取\s*([^，。；;\n]{1,20})', segment)
+            action_name = '领取' + item[1].strip() if item else '领取材料'
+            row.update(submit_method='现场领取', method_role='参与方式')
+        elif '提交申请' in segment:
+            action_name = '提交申请'
+            row.update(submit_method='现场提交申请', method_role='提交方式')
+        elif '纸质' in segment:
             action_name = '纸质材料提交'
         elif re.search(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', segment):
             action_name = '申报书电子版提交' if '申报书' in segment else '电子材料提交'

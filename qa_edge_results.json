@@ -1,0 +1,1431 @@
+[
+  {
+    "group": "1. 分类模糊与关键词冲突",
+    "name": "课程论文引用科研材料",
+    "original": "事项：马原课程论文提交\n请于11月20日18:00前上传至教学平台，可参考科研项目论文，作为本课程考核。",
+    "processed": "事项：马原课程论文提交\n请于11月20日18:00前上传至教学平台，可参考科研项目论文，作为本课程考核。",
+    "expected": {
+      "count": 1,
+      "category": [
+        "课程学业"
+      ],
+      "deadline": [
+        "2026-11-20 18:00"
+      ]
+    },
+    "actual": [
+      {
+        "task": "马原课程论文提交",
+        "deadline": "2026-11-20 18:00",
+        "submit_method": "00前上传至教学平台",
+        "location": "未提及",
+        "source_text": "事项：马原课程论文提交\n请于11月20日18:00前上传至教学平台，可参考科研项目论文，作为本课程考核。",
+        "category": "课程学业",
+        "category_candidates": [
+          "课程学业"
+        ],
+        "category_matches": {
+          "课程学业": [
+            "课程论文",
+            "论文用途语境"
+          ]
+        },
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [
+          {
+            "label": "提前3天",
+            "time": "2026-11-17 18:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 16:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "1. 分类模糊与关键词冲突",
+    "name": "竞赛论文含课程词",
+    "original": "事项：竞赛论文提交\n挑战杯竞赛论文请于11月21日18:00前通过竞赛平台提交，可附课程项目成果。",
+    "processed": "事项：竞赛论文提交\n挑战杯竞赛论文请于11月21日18:00前通过竞赛平台提交，可附课程项目成果。",
+    "expected": {
+      "count": 1,
+      "category": [
+        "竞赛科研"
+      ]
+    },
+    "actual": [
+      {
+        "task": "竞赛论文提交",
+        "deadline": "2026-11-21 18:00",
+        "submit_method": "竞赛平台",
+        "location": "未提及",
+        "source_text": "事项：竞赛论文提交\n挑战杯竞赛论文请于11月21日18:00前通过竞赛平台提交，可附课程项目成果。",
+        "category": "竞赛科研",
+        "category_candidates": [
+          "竞赛科研"
+        ],
+        "category_matches": {
+          "竞赛科研": [
+            "挑战杯",
+            "竞赛",
+            "论文用途语境"
+          ]
+        },
+        "deadline_expression": "11月21",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [
+          {
+            "label": "提前5天",
+            "time": "2026-11-16 18:00"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-20 18:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "1. 分类模糊与关键词冲突",
+    "name": "文体活动在招聘大厅",
+    "original": "金秋相约\n新生风采大赛定于11月22日19:00举行。\n东区公主楼三楼招聘大厅",
+    "processed": "金秋相约\n新生风采大赛定于11月22日19:00举行。\n东区公主楼三楼招聘大厅",
+    "expected": {
+      "count": 1,
+      "category": [
+        "活动实践"
+      ],
+      "task": [
+        "新生风采大赛"
+      ],
+      "location": [
+        "东区公主楼三楼招聘大厅"
+      ]
+    },
+    "actual": [
+      {
+        "task": "新生风采大赛",
+        "deadline": "2026-11-22 19:00",
+        "submit_method": "现场参加",
+        "location": "东区公主楼三楼招聘大厅",
+        "source_text": "金秋相约\n新生风采大赛定于11月22日19:00举行。\n东区公主楼三楼招聘大厅",
+        "category": "活动实践",
+        "category_candidates": [
+          "活动实践",
+          "就业实习"
+        ],
+        "category_matches": {
+          "活动实践": [
+            "风采大赛"
+          ],
+          "就业实习": [
+            "招聘"
+          ]
+        },
+        "deadline_expression": "11月22",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "method_role": "参与方式",
+        "time_role": "活动开始",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-21 19:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "1. 分类模糊与关键词冲突",
+    "name": "实习证明与行政关键词",
+    "original": "事项：提交实习证明\n11月23日17:00前将盖章后的实习证明上传就业系统。",
+    "processed": "事项：提交实习证明\n11月23日17:00前将盖章后的实习证明上传就业系统。",
+    "expected": {
+      "count": 1,
+      "category": [
+        "就业实习"
+      ]
+    },
+    "actual": [
+      {
+        "task": "提交实习证明",
+        "deadline": "2026-11-23 17:00",
+        "submit_method": "00前将盖章后的实习证明上传就业系统",
+        "location": "未提及",
+        "source_text": "事项：提交实习证明\n11月23日17:00前将盖章后的实习证明上传就业系统。",
+        "category": "就业实习",
+        "category_candidates": [
+          "就业实习",
+          "行政事务"
+        ],
+        "category_matches": {
+          "就业实习": [
+            "实习",
+            "就业"
+          ],
+          "行政事务": [
+            "证明",
+            "盖章"
+          ]
+        },
+        "deadline_expression": "11月23",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [
+          {
+            "label": "提前7天",
+            "time": "2026-11-16 17:00"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-22 17:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "2. 时间缺失、模糊与非法日期",
+    "name": "时间另行通知",
+    "original": "事项：校园卡补办\n请携带身份证到学生服务中心101室补办校园卡，办理时间另行通知。",
+    "processed": "事项：校园卡补办\n请携带身份证到学生服务中心101室补办校园卡，办理时间另行通知。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "未提及"
+      ],
+      "no_reminders": true
+    },
+    "actual": [
+      {
+        "task": "校园卡补办",
+        "deadline": "未提及",
+        "submit_method": "未提及",
+        "location": "学生服务中心101室",
+        "source_text": "事项：校园卡补办\n请携带身份证到学生服务中心101室补办校园卡，办理时间另行通知。",
+        "category": "生活服务",
+        "category_candidates": [
+          "生活服务"
+        ],
+        "category_matches": {
+          "生活服务": [
+            "校园卡"
+          ]
+        },
+        "deadline_expression": "",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [],
+        "reminder_note": "事件时间未确定，暂不生成提醒"
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "2. 时间缺失、模糊与非法日期",
+    "name": "预计日期不是硬截止",
+    "original": "事项：关注奖学金评审结果\n结果预计11月20日前后公布，具体以学院通知为准。",
+    "processed": "事项：关注奖学金评审结果\n结果预计11月20日前后公布，具体以学院通知为准。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "未提及"
+      ],
+      "no_reminders": true
+    },
+    "actual": [
+      {
+        "task": "关注奖学金评审结果",
+        "deadline": "未提及",
+        "submit_method": "未提及",
+        "location": "未提及",
+        "source_text": "事项：关注奖学金评审结果\n结果预计11月20日前后公布，具体以学院通知为准。",
+        "category": "行政事务",
+        "category_candidates": [
+          "行政事务"
+        ],
+        "category_matches": {
+          "行政事务": [
+            "奖学金"
+          ]
+        },
+        "deadline_expression": "",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [],
+        "reminder_note": "事件时间未确定，暂不生成提醒"
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "2. 时间缺失、模糊与非法日期",
+    "name": "非法日期不能生成提醒",
+    "original": "事项：材料提交\n请于2026年2月30日17:00前提交至教务系统。",
+    "processed": "事项：材料提交\n请于2026年2月30日17:00前提交至教务系统。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "未提及"
+      ],
+      "no_reminders": true
+    },
+    "actual": [
+      {
+        "task": "材料提交",
+        "deadline": "未提及",
+        "submit_method": "00前提交至教务系统",
+        "location": "未提及",
+        "source_text": "事项：材料提交\n请于2026年2月30日17:00前提交至教务系统。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [],
+        "reminder_note": "事件时间未确定，暂不生成提醒"
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "3. 多地点及地点归属",
+    "name": "申请与领卡地点不同",
+    "original": "事项：校园卡补办\n11月18日12:00前到学生服务中心101室提交申请，11月20日16:00前到图书馆102室领取新卡。",
+    "processed": "事项：校园卡补办\n11月18日12:00前到学生服务中心101室提交申请，11月20日16:00前到图书馆102室领取新卡。",
+    "expected": {
+      "count": 2,
+      "deadline": [
+        "2026-11-18 12:00",
+        "2026-11-20 16:00"
+      ],
+      "location_contains": [
+        "学生服务中心101",
+        "图书馆102"
+      ]
+    },
+    "actual": [
+      {
+        "task": "校园卡补办—提交申请",
+        "deadline": "2026-11-18 12:00",
+        "submit_method": "现场提交申请",
+        "location": "学生服务中心101室",
+        "source_text": "事项：校园卡补办\n11月18日12:00前到学生服务中心101室提交申请，11月20日16:00前到图书馆102室领取新卡。",
+        "category": "生活服务",
+        "category_candidates": [
+          "生活服务"
+        ],
+        "category_matches": {
+          "生活服务": [
+            "图书馆",
+            "校园卡"
+          ]
+        },
+        "deadline_expression": "11月18",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "method_role": "提交方式",
+        "source_segment": "11月18日12:00前到学生服务中心101室提交申请",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-17 12:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "校园卡补办—领取新卡",
+        "deadline": "2026-11-20 16:00",
+        "submit_method": "现场领取",
+        "location": "图书馆102室",
+        "source_text": "事项：校园卡补办\n11月18日12:00前到学生服务中心101室提交申请，11月20日16:00前到图书馆102室领取新卡。",
+        "category": "生活服务",
+        "category_candidates": [
+          "生活服务"
+        ],
+        "category_matches": {
+          "生活服务": [
+            "图书馆",
+            "校园卡"
+          ]
+        },
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "method_role": "参与方式",
+        "source_segment": "11月20日16:00前到图书馆102室领取新卡",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-19 16:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "3. 多地点及地点归属",
+    "name": "提交地点不能被咨询地点替换",
+    "original": "事项：奖学金材料提交\n11月18日12:00前将纸质材料交至行政楼205办公室。咨询地点：图书馆报告厅（不接收材料）。",
+    "processed": "事项：奖学金材料提交\n11月18日12:00前将纸质材料交至行政楼205办公室。咨询地点：图书馆报告厅（不接收材料）。",
+    "expected": {
+      "count": 1,
+      "location": [
+        "行政楼205办公室"
+      ]
+    },
+    "actual": [
+      {
+        "task": "奖学金材料提交",
+        "deadline": "2026-11-18 12:00",
+        "submit_method": "纸质",
+        "location": "行政楼205办公室",
+        "source_text": "事项：奖学金材料提交\n11月18日12:00前将纸质材料交至行政楼205办公室。咨询地点：图书馆报告厅（不接收材料）。",
+        "category": "行政事务",
+        "category_candidates": [
+          "行政事务",
+          "生活服务"
+        ],
+        "category_matches": {
+          "行政事务": [
+            "奖学金"
+          ],
+          "生活服务": [
+            "图书馆"
+          ]
+        },
+        "deadline_expression": "11月18",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "service_note": "咨询地点：图书馆报告厅（不接收材料）",
+        "reminder_times": [
+          {
+            "label": "提前3天",
+            "time": "2026-11-15 12:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-18 10:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "4. 多事项及时间、渠道和条件绑定",
+    "name": "核对、纠错、提交各有时间",
+    "original": "事项：学生信息办理\n一、信息核对：11月16日-11月18日登录学生系统核对信息，有误者于11月19日17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传材料至学生系统，纸质版交至学院学工办。",
+    "processed": "事项：学生信息办理\n一、信息核对：11月16日-11月18日登录学生系统核对信息，有误者于11月19日17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传材料至学生系统，纸质版交至学院学工办。",
+    "expected": {
+      "count": 4,
+      "deadline": [
+        "2026-11-16",
+        "2026-11-19 17:00",
+        "2026-11-20 18:00",
+        "2026-11-20 18:00"
+      ],
+      "first_end": "2026-11-18",
+      "condition_index": 1,
+      "condition": "个人信息有误",
+      "first_no_condition": true
+    },
+    "actual": [
+      {
+        "task": "信息核对—核对个人信息",
+        "deadline": "2026-11-16",
+        "submit_method": "学生系统",
+        "location": "未提及",
+        "source_text": "事项：学生信息办理\n一、信息核对：11月16日-11月18日登录学生系统核对信息，有误者于11月19日17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传材料至学生系统，纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月16日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "11月16日-11月18日登录学生系统核对信息",
+        "stage": "信息核对",
+        "requirements": "11月16日-11月18日登录学生系统核对信息",
+        "notice_subject": "学生信息办理",
+        "time_kind": "range",
+        "time_role": "核对开始",
+        "end_time": "2026-11-18",
+        "end_time_label": "核对结束日期",
+        "time_range_expression": "11月16日-11月18日登录学生系统核对信息",
+        "time_note": "日期范围不代表具体预约时刻，请核对办理安排。",
+        "time_binding": "own_action",
+        "reminder_times": [
+          {
+            "label": "开始前1天",
+            "time": "2026-11-15"
+          },
+          {
+            "label": "开始时间提醒",
+            "time": "2026-11-16"
+          }
+        ],
+        "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
+      },
+      {
+        "task": "信息核对—现场修改信息",
+        "deadline": "2026-11-19 17:00",
+        "submit_method": "现场修改",
+        "location": "行政楼108室",
+        "source_text": "事项：学生信息办理\n一、信息核对：11月16日-11月18日登录学生系统核对信息，有误者于11月19日17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传材料至学生系统，纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月19",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "有误者于11月19日17:00前到行政楼108室现场修改",
+        "stage": "信息核对",
+        "requirements": "有误者于11月19日17:00前到行政楼108室现场修改",
+        "notice_subject": "学生信息办理",
+        "time_kind": "deadline",
+        "prerequisite": "个人信息有误",
+        "time_binding": "own_action",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-18 17:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-19 15:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "材料提交—上传材料",
+        "deadline": "2026-11-20 18:00",
+        "submit_method": "学生系统",
+        "location": "未提及",
+        "source_text": "事项：学生信息办理\n一、信息核对：11月16日-11月18日登录学生系统核对信息，有误者于11月19日17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传材料至学生系统，纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "11月20日18:00前上传材料至学生系统",
+        "stage": "材料提交",
+        "requirements": "11月20日18:00前上传材料至学生系统",
+        "notice_subject": "学生信息办理",
+        "time_kind": "deadline",
+        "time_binding": "own_action",
+        "submission_group": "材料提交—材料",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-19 18:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 16:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "材料提交—提交纸质材料",
+        "deadline": "2026-11-20 18:00",
+        "submit_method": "纸质提交",
+        "location": "学院学工办",
+        "source_text": "事项：学生信息办理\n一、信息核对：11月16日-11月18日登录学生系统核对信息，有误者于11月19日17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传材料至学生系统，纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "纸质版交至学院学工办",
+        "stage": "材料提交",
+        "requirements": "纸质版交至学院学工办",
+        "notice_subject": "学生信息办理",
+        "method_role": "提交方式",
+        "time_kind": "deadline",
+        "time_binding": "parallel_material_inferred",
+        "deadline_inferred": true,
+        "deadline_source": "11月20日18:00前上传材料至学生系统",
+        "submission_group": "材料提交—材料",
+        "time_note": "同阶段同句的电子/纸质材料并列提交，推定共用 2026-11-20 18:00；纸质期限并非独立明示，请核对。",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-19 18:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 16:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "4. 多事项及时间、渠道和条件绑定",
+    "name": "同一报名窗口不能拆成两件事",
+    "original": "事项：课程报名\n课程报名于11月16日09:00开始，11月20日18:00截止，请通过选课系统报名。",
+    "processed": "事项：课程报名\n课程报名于11月16日09:00开始，11月20日18:00截止，请通过选课系统报名。",
+    "expected": {
+      "count": 1,
+      "start_time": [
+        "2026-11-16 09:00"
+      ],
+      "deadline": [
+        "2026-11-20 18:00"
+      ],
+      "reminder_times": [
+        [
+          "2026-11-15 09:00",
+          "2026-11-16 09:00",
+          "2026-11-20 16:00"
+        ]
+      ]
+    },
+    "actual": [
+      {
+        "task": "课程报名",
+        "deadline": "2026-11-20 18:00",
+        "submit_method": "选课系统",
+        "location": "未提及",
+        "source_text": "事项：课程报名\n课程报名于11月16日09:00开始，11月20日18:00截止，请通过选课系统报名。",
+        "category": "课程学业",
+        "category_candidates": [
+          "课程学业"
+        ],
+        "category_matches": {
+          "课程学业": [
+            "选课"
+          ]
+        },
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "start_time": "2026-11-16 09:00",
+        "reminder_times": [
+          {
+            "label": "开始前1天",
+            "time": "2026-11-15 09:00"
+          },
+          {
+            "label": "开始时间提醒",
+            "time": "2026-11-16 09:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 16:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "5. 模拟 OCR 断行恢复",
+    "name": "动作词在行尾被截断",
+    "original": "事项：课程论文提交\n请于11月19日18:00前上传到教学平台。",
+    "processed": "事项：课程论文提交\n请于11月19日18:00前上传到教学平台。",
+    "expected": {
+      "count": 1,
+      "category": [
+        "课程学业"
+      ],
+      "deadline": [
+        "2026-11-19 18:00"
+      ],
+      "equivalent_plain": true
+    },
+    "actual": [
+      {
+        "task": "课程论文提交",
+        "deadline": "2026-11-19 18:00",
+        "submit_method": "教学平台",
+        "location": "未提及",
+        "source_text": "事项：课程论文提交\n请于11月19日18:00前上传到教学平台。",
+        "category": "课程学业",
+        "category_candidates": [
+          "课程学业"
+        ],
+        "category_matches": {
+          "课程学业": [
+            "课程论文",
+            "论文用途语境"
+          ]
+        },
+        "deadline_expression": "11月19",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "reminder_times": [
+          {
+            "label": "提前3天",
+            "time": "2026-11-16 18:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-19 16:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "5. 模拟 OCR 断行恢复",
+    "name": "编号阶段内月份和系统名断行",
+    "original": "学生信息办理\n一、信息核对：请于11月16日-11月18日登录学生系统核对信息，有误者于11\n月19日\n17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传至学\n生系统，\n纸质版交至学院学工办。",
+    "processed": "学生信息办理\n一、信息核对：请于11月16日-11月18日登录学生系统核对信息，有误者于11\n月19日\n17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传至学\n生系统，\n纸质版交至学院学工办。",
+    "expected": {
+      "count": 4,
+      "deadline": [
+        "2026-11-16",
+        "2026-11-19 17:00",
+        "2026-11-20 18:00",
+        "2026-11-20 18:00"
+      ]
+    },
+    "actual": [
+      {
+        "task": "信息核对—核对个人信息",
+        "deadline": "2026-11-16",
+        "submit_method": "学生系统",
+        "location": "未提及",
+        "source_text": "学生信息办理\n一、信息核对：请于11月16日-11月18日登录学生系统核对信息，有误者于11\n月19日\n17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传至学\n生系统，\n纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月16日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "请于11月16日-11月18日登录学生系统核对信息",
+        "stage": "信息核对",
+        "requirements": "请于11月16日-11月18日登录学生系统核对信息",
+        "notice_subject": "学生信息办理",
+        "time_kind": "range",
+        "time_role": "核对开始",
+        "end_time": "2026-11-18",
+        "end_time_label": "核对结束日期",
+        "time_range_expression": "请于11月16日-11月18日登录学生系统核对信息",
+        "time_note": "日期范围不代表具体预约时刻，请核对办理安排。",
+        "time_binding": "own_action",
+        "reminder_times": [
+          {
+            "label": "开始前1天",
+            "time": "2026-11-15"
+          },
+          {
+            "label": "开始时间提醒",
+            "time": "2026-11-16"
+          }
+        ],
+        "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
+      },
+      {
+        "task": "信息核对—现场修改信息",
+        "deadline": "2026-11-19 17:00",
+        "submit_method": "现场修改",
+        "location": "行政楼108室",
+        "source_text": "学生信息办理\n一、信息核对：请于11月16日-11月18日登录学生系统核对信息，有误者于11\n月19日\n17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传至学\n生系统，\n纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月19",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "有误者于11月19日17:00前到行政楼108室现场修改",
+        "stage": "信息核对",
+        "requirements": "有误者于11月19日17:00前到行政楼108室现场修改",
+        "notice_subject": "学生信息办理",
+        "time_kind": "deadline",
+        "prerequisite": "个人信息有误",
+        "time_binding": "own_action",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-18 17:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-19 15:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "材料提交—上传材料",
+        "deadline": "2026-11-20 18:00",
+        "submit_method": "学生系统",
+        "location": "未提及",
+        "source_text": "学生信息办理\n一、信息核对：请于11月16日-11月18日登录学生系统核对信息，有误者于11\n月19日\n17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传至学\n生系统，\n纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "11月20日18:00前上传至学生系统",
+        "stage": "材料提交",
+        "requirements": "11月20日18:00前上传至学生系统",
+        "notice_subject": "学生信息办理",
+        "time_kind": "deadline",
+        "time_binding": "own_action",
+        "submission_group": "材料提交—材料",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-19 18:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 16:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "材料提交—提交纸质材料",
+        "deadline": "2026-11-20 18:00",
+        "submit_method": "纸质提交",
+        "location": "学院学工办",
+        "source_text": "学生信息办理\n一、信息核对：请于11月16日-11月18日登录学生系统核对信息，有误者于11\n月19日\n17:00前到行政楼108室现场修改。\n二、材料提交：11月20日18:00前上传至学\n生系统，\n纸质版交至学院学工办。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "纸质版交至学院学工办",
+        "stage": "材料提交",
+        "requirements": "纸质版交至学院学工办",
+        "notice_subject": "学生信息办理",
+        "method_role": "提交方式",
+        "time_kind": "deadline",
+        "time_binding": "parallel_material_inferred",
+        "deadline_inferred": true,
+        "deadline_source": "11月20日18:00前上传至学生系统",
+        "submission_group": "材料提交—材料",
+        "time_note": "同阶段同句的电子/纸质材料并列提交，推定共用 2026-11-20 18:00；纸质期限并非独立明示，请核对。",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-19 18:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 16:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "6. 当前日期换算及原文留存",
+    "name": "下周一",
+    "original": "下周一下午两点有个实习分享会，想参加的群里接龙。",
+    "processed": "下周一下午两点有个实习分享会，想参加的群里接龙。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "2026-11-16 14:00"
+      ],
+      "reference_date": [
+        "2026-11-11"
+      ],
+      "original_relative": "下周一"
+    },
+    "actual": [
+      {
+        "task": "参加实习分享会",
+        "deadline": "2026-11-16 14:00",
+        "submit_method": "群接龙",
+        "location": "未提及",
+        "source_text": "下周一下午两点有个实习分享会，想参加的群里接龙。",
+        "category": "就业实习",
+        "category_candidates": [
+          "就业实习"
+        ],
+        "category_matches": {
+          "就业实习": [
+            "实习"
+          ]
+        },
+        "deadline_expression": "2026年11月16日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "下周一下午两点有个实习分享会，想参加的群里接龙",
+        "requirements": "下周一下午两点有个实习分享会，想参加的群里接龙",
+        "time_role": "活动开始",
+        "method_role": "参与方式",
+        "prerequisite": "自愿参加",
+        "optional": true,
+        "time_expression": "下周一下午2点",
+        "relative_date_expression": "下周一",
+        "reference_date": "2026-11-11",
+        "reference_source": "current_beijing",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "time_note": "相对日期按当前北京时间日期 2026-11-11 换算；旧通知请用 --reference-date 指定原发布时间。",
+        "reminder_times": [
+          {
+            "label": "提前7天",
+            "time": "2026-11-09 14:00"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-15 14:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "6. 当前日期换算及原文留存",
+    "name": "后天没有具体时刻",
+    "original": "后天参加班会，地点：教学楼201室。",
+    "processed": "后天参加班会，地点：教学楼201室。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "2026-11-13"
+      ],
+      "reference_date": [
+        "2026-11-11"
+      ],
+      "original_relative": "后天",
+      "date_only_reminders": true
+    },
+    "actual": [
+      {
+        "task": "班会",
+        "deadline": "2026-11-13",
+        "submit_method": "现场参加",
+        "location": "教学楼201室",
+        "source_text": "后天参加班会，地点：教学楼201室。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "2026年11月13日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "method_role": "参与方式",
+        "source_segment": "后天参加班会，地点:教学楼201室",
+        "requirements": "后天参加班会，地点:教学楼201室",
+        "time_note": "相对日期按当前北京时间日期 2026-11-11 换算；旧通知请用 --reference-date 指定原发布时间。",
+        "time_expression": "后天",
+        "relative_date_expression": "后天",
+        "reference_date": "2026-11-11",
+        "reference_source": "current_beijing",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-12"
+          }
+        ],
+        "reminder_note": "缺少具体时刻，未生成截止前2小时提醒"
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "6. 当前日期换算及原文留存",
+    "name": "年末跨年",
+    "original": "后天下午3点参加班会。",
+    "processed": "后天下午3点参加班会。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "2027-01-02 15:00"
+      ],
+      "reference_date": [
+        "2026-12-31"
+      ],
+      "original_relative": "后天"
+    },
+    "actual": [
+      {
+        "task": "班会",
+        "deadline": "2027-01-02 15:00",
+        "submit_method": "未提及",
+        "location": "未提及",
+        "source_text": "后天下午3点参加班会。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "2027年1月2日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "后天下午3点参加班会",
+        "requirements": "后天下午3点参加班会",
+        "time_note": "相对日期按当前北京时间日期 2026-12-31 换算；旧通知请用 --reference-date 指定原发布时间。",
+        "time_expression": "后天下午3点",
+        "relative_date_expression": "后天",
+        "reference_date": "2026-12-31",
+        "reference_source": "current_beijing",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2027-01-01 15:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2027-01-02 13:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "6. 当前日期换算及原文留存",
+    "name": "指定参考日覆盖当前日",
+    "original": "后天下午3点参加班会。",
+    "processed": "后天下午3点参加班会。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "2026-11-03 15:00"
+      ],
+      "reference_date": [
+        "2026-11-01"
+      ]
+    },
+    "actual": [
+      {
+        "task": "班会",
+        "deadline": "2026-11-03 15:00",
+        "submit_method": "未提及",
+        "location": "未提及",
+        "source_text": "后天下午3点参加班会。",
+        "category": "其它类别",
+        "category_candidates": [],
+        "category_matches": {},
+        "deadline_expression": "2026年11月3日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "后天下午3点参加班会",
+        "requirements": "后天下午3点参加班会",
+        "time_note": "相对日期按指定参考日期 2026-11-01 换算；旧通知请用 --reference-date 指定原发布时间。",
+        "time_expression": "后天下午3点",
+        "relative_date_expression": "后天",
+        "reference_date": "2026-11-01",
+        "reference_source": "specified",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "reminder_times": [
+          {
+            "label": "提前1天",
+            "time": "2026-11-02 15:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-03 13:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "7. 模拟课程表坐标与缺失单元格",
+    "name": "乱序文字框及第二行缺教师",
+    "original": "时间｜地点｜主题｜学时｜主讲教师\n11月20日09:00—11:00｜三教310｜Python程序设计｜2学时｜张老师\n11月21日14:00—16:00｜理科楼208｜高等数学｜2学时｜未提供",
+    "processed": "时间\t地点\t主题\t学时\t主讲教师\n11月20日9:00-11:00\t三教310\tPython程序设计\t2学时\t张老师\n11月21日14:00-16:00\t理科楼208\t高等数学\t2学时\t",
+    "expected": {
+      "count": 2,
+      "task": [
+        "Python程序设计",
+        "高等数学"
+      ],
+      "deadline": [
+        "2026-11-20 09:00",
+        "2026-11-21 14:00"
+      ],
+      "end_time": [
+        "2026-11-20 11:00",
+        "2026-11-21 16:00"
+      ],
+      "location": [
+        "三教310",
+        "理科楼208"
+      ],
+      "teacher": [
+        "张老师",
+        ""
+      ],
+      "category": [
+        "课程学业",
+        "课程学业"
+      ],
+      "warning_index": 1
+    },
+    "actual": [
+      {
+        "task": "Python程序设计",
+        "deadline": "2026-11-20 09:00",
+        "submit_method": "现场上课",
+        "location": "三教310",
+        "source_text": "时间\t地点\t主题\t学时\t主讲教师\n11月20日9:00-11:00\t三教310\tPython程序设计\t2学时\t张老师\n11月21日14:00-16:00\t理科楼208\t高等数学\t2学时\t",
+        "category": "课程学业",
+        "category_candidates": [
+          "课程学业"
+        ],
+        "category_matches": {
+          "课程学业": [
+            "课程表"
+          ]
+        },
+        "deadline_expression": "11月20",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "end_time": "2026-11-20 11:00",
+        "time_role": "课程开始",
+        "end_time_label": "课程结束时间",
+        "time_kind": "range",
+        "method_role": "参与方式",
+        "source_segment": "时间：11月20日9:00-11:00；地点：三教310；主题：Python程序设计；学时：2学时；主讲教师：张老师",
+        "requirements": "时间：11月20日9:00-11:00；地点：三教310；主题：Python程序设计；学时：2学时；主讲教师：张老师",
+        "course_hours": "2学时",
+        "teacher": "张老师",
+        "reference_date": "2026-11-11",
+        "time_expression": "11月20日9:00-11:00",
+        "time_note": "原表未写年份，按参考年份 2026 处理，请核对",
+        "reminder_times": [
+          {
+            "label": "开始前1天",
+            "time": "2026-11-19 09:00"
+          },
+          {
+            "label": "开始时间提醒",
+            "time": "2026-11-20 09:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-20 09:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "高等数学",
+        "deadline": "2026-11-21 14:00",
+        "submit_method": "现场上课",
+        "location": "理科楼208",
+        "source_text": "时间\t地点\t主题\t学时\t主讲教师\n11月20日9:00-11:00\t三教310\tPython程序设计\t2学时\t张老师\n11月21日14:00-16:00\t理科楼208\t高等数学\t2学时\t",
+        "category": "课程学业",
+        "category_candidates": [
+          "课程学业"
+        ],
+        "category_matches": {
+          "课程学业": [
+            "课程表"
+          ]
+        },
+        "deadline_expression": "11月21",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "end_time": "2026-11-21 16:00",
+        "time_role": "课程开始",
+        "end_time_label": "课程结束时间",
+        "time_kind": "range",
+        "method_role": "参与方式",
+        "source_segment": "时间：11月21日14:00-16:00；地点：理科楼208；主题：高等数学；学时：2学时",
+        "requirements": "时间：11月21日14:00-16:00；地点：理科楼208；主题：高等数学；学时：2学时",
+        "course_hours": "2学时",
+        "teacher": "",
+        "reference_date": "2026-11-11",
+        "time_expression": "11月21日14:00-16:00",
+        "time_note": "本行有单元格缺失或时间不完整，未沿用邻行内容，请核对；原表未写年份，按参考年份 2026 处理，请核对",
+        "reminder_times": [
+          {
+            "label": "开始前1天",
+            "time": "2026-11-20 14:00"
+          },
+          {
+            "label": "开始时间提醒",
+            "time": "2026-11-21 14:00"
+          },
+          {
+            "label": "截止前2小时",
+            "time": "2026-11-21 14:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "8. 群消息与口语化条件",
+    "name": "材料照片、纸质版及自愿分享会",
+    "original": "@所有人 明天（周四）中午12点前把实习证明拍照发我微信。还没交的这周五之前交纸质版到经管楼507。另外下周三下午两点有个实习分享会，想参加的群里接龙。",
+    "processed": "@所有人 明天（周四）中午12点前把实习证明拍照发我微信。还没交的这周五之前交纸质版到经管楼507。另外下周三下午两点有个实习分享会，想参加的群里接龙。",
+    "expected": {
+      "count": 3,
+      "deadline": [
+        "2026-11-12 12:00",
+        "2026-11-12",
+        "2026-11-18 14:00"
+      ],
+      "method_contains": [
+        "微信",
+        "纸质",
+        "群接龙"
+      ],
+      "optional_index": 2,
+      "no_mention_in_tasks": true
+    },
+    "actual": [
+      {
+        "task": "提交实习证明照片",
+        "deadline": "2026-11-12 12:00",
+        "submit_method": "微信发送照片（发给通知发布者）",
+        "location": "未提及",
+        "source_text": "@所有人 明天（周四）中午12点前把实习证明拍照发我微信。还没交的这周五之前交纸质版到经管楼507。另外下周三下午两点有个实习分享会，想参加的群里接龙。",
+        "category": "就业实习",
+        "category_candidates": [
+          "就业实习",
+          "行政事务"
+        ],
+        "category_matches": {
+          "就业实习": [
+            "实习"
+          ],
+          "行政事务": [
+            "证明"
+          ]
+        },
+        "deadline_expression": "2026年11月12日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "@所有人 明天(周四)中午12点前把实习证明拍照发我微信",
+        "requirements": "@所有人 明天(周四)中午12点前把实习证明拍照发我微信",
+        "time_role": "提交截止",
+        "method_role": "提交方式",
+        "submission_group": "实习证明提交",
+        "time_expression": "明天(周四)中午12点前",
+        "relative_date_expression": "明天(周四)",
+        "reference_date": "2026-11-11",
+        "reference_source": "specified",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "time_note": "相对日期按指定参考日期 2026-11-11 换算；旧通知请用 --reference-date 指定原发布时间。",
+        "reminder_times": [
+          {
+            "label": "提前7天",
+            "time": "2026-11-05 12:00"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-11 12:00"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "提交实习证明纸质版",
+        "deadline": "2026-11-12",
+        "submit_method": "纸质提交",
+        "location": "经管楼507",
+        "source_text": "@所有人 明天（周四）中午12点前把实习证明拍照发我微信。还没交的这周五之前交纸质版到经管楼507。另外下周三下午两点有个实习分享会，想参加的群里接龙。",
+        "category": "就业实习",
+        "category_candidates": [
+          "就业实习",
+          "行政事务"
+        ],
+        "category_matches": {
+          "就业实习": [
+            "实习"
+          ],
+          "行政事务": [
+            "证明"
+          ]
+        },
+        "deadline_expression": "2026年11月13日之前",
+        "deadline_boundary": "exclusive_date",
+        "deadline_note": "原文“2026年11月13日之前”按不含 2026-11-13 当日处理；最晚提交日期为 2026-11-12，未指定具体时刻。",
+        "source_segment": "还没交的这周五之前交纸质版到经管楼507",
+        "requirements": "还没交的这周五之前交纸质版到经管楼507",
+        "time_role": "提交截止",
+        "method_role": "提交方式",
+        "material_inferred": true,
+        "submission_group": "实习证明提交",
+        "prerequisite": "前述材料尚未提交",
+        "time_expression": "这周五之前",
+        "relative_date_expression": "这周五",
+        "reference_date": "2026-11-11",
+        "reference_source": "specified",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "time_note": "相对日期按指定参考日期 2026-11-11 换算；旧通知请用 --reference-date 指定原发布时间。 纸质版按前文关联到同一材料，请核对。",
+        "reminder_times": [
+          {
+            "label": "提前7天",
+            "time": "2026-11-05"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-11"
+          }
+        ],
+        "reminder_note": ""
+      },
+      {
+        "task": "参加实习分享会",
+        "deadline": "2026-11-18 14:00",
+        "submit_method": "群接龙",
+        "location": "未提及",
+        "source_text": "@所有人 明天（周四）中午12点前把实习证明拍照发我微信。还没交的这周五之前交纸质版到经管楼507。另外下周三下午两点有个实习分享会，想参加的群里接龙。",
+        "category": "就业实习",
+        "category_candidates": [
+          "就业实习"
+        ],
+        "category_matches": {
+          "就业实习": [
+            "实习"
+          ]
+        },
+        "deadline_expression": "2026年11月18日",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "source_segment": "另外下周三下午两点有个实习分享会，想参加的群里接龙",
+        "requirements": "另外下周三下午两点有个实习分享会，想参加的群里接龙",
+        "time_role": "活动开始",
+        "method_role": "参与方式",
+        "prerequisite": "自愿参加",
+        "optional": true,
+        "time_expression": "下周三下午2点",
+        "relative_date_expression": "下周三",
+        "reference_date": "2026-11-11",
+        "reference_source": "specified",
+        "reference_required": false,
+        "weekday_conflict": false,
+        "time_kind": "relative_date",
+        "time_note": "相对日期按指定参考日期 2026-11-11 换算；旧通知请用 --reference-date 指定原发布时间。",
+        "reminder_times": [
+          {
+            "label": "提前7天",
+            "time": "2026-11-11 14:00"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-17 14:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  },
+  {
+    "group": "9. 复杂比赛报名聚合",
+    "name": "赛题和组织介绍不是任务",
+    "original": "关于第六届大学生智能制造创新大赛的通知\n一、赛事背景\n培养实践能力，赛题包括机器人足球和论文研究。\n二、赛题介绍\n共设置10个题目，每题另附评分说明；颁奖典礼定于12月1日举行。\n三、组委会工作\n组织教学研讨、招聘交流。\n四、选手须知\n每支参赛队伍学生人数3-5名，每名学生仅可参加1支队伍。本次报名与资料上传统一通过官网https://contest.example.com线上报送。参赛队伍须于2026年11月25日17:00前完成系统报名，同时将报名材料打包发送至team@example.como。报名材料命名为“学校-姓名-赛题”，报名信息提交后不得变更队伍成员。",
+    "processed": "关于第六届大学生智能制造创新大赛的通知\n一、赛事背景\n培养实践能力，赛题包括机器人足球和论文研究。\n二、赛题介绍\n共设置10个题目，每题另附评分说明；颁奖典礼定于12月1日举行。\n三、组委会工作\n组织教学研讨、招聘交流。\n四、选手须知\n每支参赛队伍学生人数3-5名，每名学生仅可参加1支队伍。本次报名与资料上传统一通过官网https://contest.example.com线上报送。参赛队伍须于2026年11月25日17:00前完成系统报名，同时将报名材料打包发送至team@example.como。报名材料命名为“学校-姓名-赛题”，报名信息提交后不得变更队伍成员。",
+    "expected": {
+      "count": 1,
+      "deadline": [
+        "2026-11-25 17:00"
+      ],
+      "category": [
+        "竞赛科研"
+      ],
+      "method_contains_all": [
+        "https://contest.example.com",
+        "team@example.com"
+      ],
+      "method_excludes": [
+        "example.como"
+      ],
+      "requirements_contains": [
+        "3-5名",
+        "命名",
+        "不得变更"
+      ],
+      "task_contains": [
+        "智能制造创新大赛报名"
+      ]
+    },
+    "actual": [
+      {
+        "task": "第六届大学生智能制造创新大赛报名",
+        "deadline": "2026-11-25 17:00",
+        "submit_method": "系统报名：https://contest.example.com线上报送；报名材料发送至邮箱：team@example.com",
+        "location": "未提及",
+        "source_text": "关于第六届大学生智能制造创新大赛的通知\n一、赛事背景\n培养实践能力，赛题包括机器人足球和论文研究。\n二、赛题介绍\n共设置10个题目，每题另附评分说明；颁奖典礼定于12月1日举行。\n三、组委会工作\n组织教学研讨、招聘交流。\n四、选手须知\n每支参赛队伍学生人数3-5名，每名学生仅可参加1支队伍。本次报名与资料上传统一通过官网https://contest.example.com线上报送。参赛队伍须于2026年11月25日17:00前完成系统报名，同时将报名材料打包发送至team@example.como。报名材料命名为“学校-姓名-赛题”，报名信息提交后不得变更队伍成员。",
+        "category": "竞赛科研",
+        "category_candidates": [
+          "竞赛科研"
+        ],
+        "category_matches": {
+          "竞赛科研": [
+            "比赛报名操作"
+          ]
+        },
+        "deadline_expression": "2026年11月25",
+        "deadline_boundary": "unspecified",
+        "deadline_note": "",
+        "deadline_source": "参赛队伍须于2026年11月25日17:00前完成系统报名，同时将报名材料打包发送至team@example.com",
+        "stage": "报名",
+        "notice_subject": "第六届大学生智能制造创新大赛",
+        "time_role": "报名截止",
+        "time_kind": "deadline",
+        "source_segment": "本次报名与资料上传统一通过官网https://contest.example.com线上报送。参赛队伍须于2026年11月25日17:00前完成系统报名，同时将报名材料打包发送至team@example.com。报名材料命名为“学校-姓名-赛题”，报名信息提交后不得变更队伍成员",
+        "requirements": "四、选手须知每支参赛队伍学生人数3-5名；每名学生仅可参加1支队伍；报名材料需打包；报名材料命名为“学校-姓名-赛题”；报名信息提交后不得变更队伍成员",
+        "reminder_times": [
+          {
+            "label": "提前5天",
+            "time": "2026-11-20 17:00"
+          },
+          {
+            "label": "提前1天",
+            "time": "2026-11-24 17:00"
+          }
+        ],
+        "reminder_note": ""
+      }
+    ],
+    "failures": []
+  }
+]

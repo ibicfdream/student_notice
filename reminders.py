@@ -8,6 +8,7 @@ STRATEGIES = {
     '行政事务': (('提前3天', 72), ('截止前2小时', 2)),
     '就业实习': (('提前7天', 168), ('提前1天', 24)),
     '生活服务': (('提前1天', 24),),
+    '其它类别': (('提前1天', 24), ('截止前2小时', 2)),
 }
 
 
@@ -31,6 +32,27 @@ def plan(category: str, deadline: str) -> tuple[list[dict], str]:
     return reminders, '缺少具体时刻，未生成截止前2小时提醒' if skipped else ''
 
 
+def range_plan(start: str, end: str) -> tuple[list[dict], str]:
+    """起止节点策略；日期精度保持原样，不虚构时刻。"""
+    try:
+        first, last = datetime.fromisoformat(start), datetime.fromisoformat(end)
+        if last < first:
+            return [], '结束时间早于开始时间，请核对'
+    except (ValueError, TypeError):
+        return [], '起止时间未确定，请核对'
+    fmt = '%Y-%m-%d' if len(start) == 10 else '%Y-%m-%d %H:%M'
+    result = [{'label': '开始前1天', 'time': (first - timedelta(days=1)).strftime(fmt)},
+              {'label': '开始时间提醒', 'time': first.strftime(fmt)}]
+    notes = []
+    if len(start) == 10:
+        notes.append('开始时间仅精确到日期，具体提醒时刻待确认')
+    if len(end) == 10:
+        notes.append('缺少具体截止时刻，未生成截止前2小时提醒')
+    else:
+        result.append({'label': '截止前2小时', 'time': (last - timedelta(hours=2)).strftime('%Y-%m-%d %H:%M')})
+    return sorted(result, key=lambda item: item['time']), '；'.join(notes)
+
+
 def enrich(record: dict) -> dict:
     """派生提醒始终按当前分类和时间重算，避免手动修改后的旧计划残留。"""
     from categories import UNCATEGORIZED
@@ -44,6 +66,12 @@ def enrich(record: dict) -> dict:
             record['reminder_note'] = '缺少通知发布时间，暂不生成相对日期提醒'
         elif record.get('weekday_conflict'):
             record['reminder_note'] = '日期与原文星期存在冲突，暂不生成提醒'
+        return record
+    if record.get('start_time') not in (None, '', '未提及') and record['deadline'] != '未提及':
+        record['reminder_times'], record['reminder_note'] = range_plan(record['start_time'], record['deadline'])
+        return record
+    if record.get('end_time') not in (None, '', '未提及') and record.get('time_role', '').endswith('开始'):
+        record['reminder_times'], record['reminder_note'] = range_plan(record['deadline'], record['end_time'])
         return record
     record['reminder_times'], record['reminder_note'] = plan(record['category'], record['deadline'])
     if record.get('time_role', '').endswith('开始'):

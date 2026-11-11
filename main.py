@@ -35,6 +35,8 @@ def confirm(record: dict, editing: bool = False) -> bool:
              ('submit_method', '提交方式'), ('location', '事件地点'), ('category', '分类标签')]
     if draft.get('time_role'):
         items[1] = ('deadline', draft['time_role'] + '时间')
+    if 'start_time' in draft:
+        items.append(('start_time', '开始时间'))
     if 'end_time' in draft:
         items.append(('end_time', draft.get('end_time_label', '活动结束时间')))
     if 'service_hours' in draft:
@@ -42,7 +44,7 @@ def confirm(record: dict, editing: bool = False) -> bool:
     if 'service_note' in draft:
         items.append(('service_note', '补充说明'))
     for key, label in (('time_expression', '原文时间安排'), ('prerequisite', '参加/办理条件'), ('excluded_audience', '无需参加人群'), ('consequence', '未办理后果'),
-                       ('requirements', '办理要求')):
+                       ('requirements', '要求')):
         if key in draft:
             items.append((key, label))
     if draft.get('method_role'):
@@ -69,7 +71,7 @@ def confirm(record: dict, editing: bool = False) -> bool:
             warning = ''
             if value == MISSING:
                 warning = ' [待核对：信息缺失]'
-            elif key in ('deadline', 'end_time'):
+            elif key in ('deadline', 'end_time', 'start_time'):
                 try:
                     datetime.strptime(value, '%Y-%m-%d' if len(value) == 10 else '%Y-%m-%d %H:%M')
                     if len(value) == 10:
@@ -84,6 +86,9 @@ def confirm(record: dict, editing: bool = False) -> bool:
             if key == 'deadline' and draft.get('deadline_inferred'):
                 warning += ' [待核对：沿用同组材料期限]'
             print(f'{number}. {label}：{value}{warning}')
+        if draft.get('relative_date_expression'):
+            basis = '指定参考日期' if draft.get('reference_source') == 'specified' else '当前北京时间日期'
+            print(f"参考日期：{draft.get('reference_date', '未提及')}（{basis}）")
         print('\n提醒计划：')
         for reminder in draft['reminder_times']:
             print(f"  {reminder['label']}：{reminder['time']}")
@@ -91,6 +96,8 @@ def confirm(record: dict, editing: bool = False) -> bool:
             print('  ' + draft['reminder_note'])
         if draft.get('time_note'):
             print('  [待核对] ' + draft['time_note'])
+        if draft.get('extraction_note'):
+            print('  [待核对] ' + draft['extraction_note'])
         if draft.get('deadline_note'):
             print('  时间说明：' + draft['deadline_note'])
         if draft.get('time_range_expression'):
@@ -122,7 +129,7 @@ def confirm(record: dict, editing: bool = False) -> bool:
         print(f'修改{label}，当前内容：{draft[key]}')
         if key == 'category':
             print('分类选项：' + ' / '.join(f'{i} {name}' for i, name in enumerate(CHOICES, 1)))
-        elif key in ('deadline', 'end_time'):
+        elif key in ('deadline', 'end_time', 'start_time'):
             print('可输入日期、日期+小时或日期+时分；例如 2026-11-17 14 会保存为 2026-11-17 14:00。')
         while True:
             value = input('回车保留，输入新内容替换；输入“未提及”清空：').strip()
@@ -135,11 +142,17 @@ def confirm(record: dict, editing: bool = False) -> bool:
                     print('请选择上方列出的分类编号或名称。')
                     continue
                 category_confirmed = True
-            elif key in ('deadline', 'end_time') and value != MISSING:
+            elif key in ('deadline', 'end_time', 'start_time') and value != MISSING:
                 try:
                     value = normalize_time_input(value)
                 except ValueError:
                     print('时间无效，请检查日期及小时（0–23）、分钟（0–59）；支持 YYYY-MM-DD、YYYY-MM-DD HH 或 YYYY-MM-DD HH:MM。')
+                    continue
+            if key in ('deadline', 'start_time') and 'start_time' in draft:
+                start = value if key == 'start_time' else draft['start_time']
+                end = value if key == 'deadline' else draft['deadline']
+                if start != MISSING and end != MISSING and datetime.fromisoformat(end) < datetime.fromisoformat(start):
+                    print('截止时间不能早于开始时间；可先清空另一端再调整。')
                     continue
             if key in ('deadline', 'end_time') and 'end_time' in draft:
                 start = value if key == 'deadline' else draft['deadline']
@@ -189,9 +202,11 @@ def confirm_notices(records: list[dict]) -> bool:
                 print('  同组材料：' + row['submission_group'])
             if row.get('deadline_inferred'):
                 print('  [待核对：沿用同组材料期限，并非原文独立明示]')
-            for key, title in (('time_expression', '原文时间安排'), ('prerequisite', '参加/办理条件'), ('excluded_audience', '无需参加人群'), ('consequence', '未办理后果'), ('requirements', '办理要求')):
+            for key, title in (('time_expression', '原文时间安排'), ('prerequisite', '参加/办理条件'), ('excluded_audience', '无需参加人群'), ('consequence', '未办理后果'), ('requirements', '要求')):
                 if row.get(key):
                     print(f'  {title}：{row[key]}')
+            if 'start_time' in row:
+                print('  开始时间：' + row['start_time'])
             if 'end_time' in row:
                 print(f"  {row.get('end_time_label', '活动结束时间')}：{row['end_time']}")
             if row.get('service_hours'):
@@ -209,6 +224,8 @@ def confirm_notices(records: list[dict]) -> bool:
                 print('  ' + row['reminder_note'])
             if row.get('time_note'):
                 print('  [待核对] ' + row['time_note'])
+            if row.get('extraction_note'):
+                print('  [待核对] ' + row['extraction_note'])
             if row.get('deadline_note'):
                 print('  时间说明：' + row['deadline_note'])
         if show_source:
@@ -255,6 +272,8 @@ def show_todos(path: Path, days: int | None, category: str | None = None) -> Non
         display_time = prefix + raw
         if row.get('time_expression'):
             display_time += '（' + row['time_expression'] + '）'
+        if row.get('start_time') and row['start_time'] != MISSING:
+            display_time = row['start_time'] + ' 至 ' + display_time
         if row.get('end_time') and row['end_time'] != MISSING:
             display_time += ' 至 ' + row['end_time']
         if row.get('service_hours'):
@@ -301,9 +320,7 @@ def main() -> int:
     source = add.add_mutually_exclusive_group()
     source.add_argument('--text', help='直接传入通知文本')
     source.add_argument('--image', type=Path, help='通知截图')
-    add.add_argument('--ocr', choices=['pytesseract', 'paddleocr'], default='pytesseract')
-    add.add_argument('--tesseract-cmd', help='Tesseract 可执行文件完整路径')
-    add.add_argument('--reference-date', '--notice-date', dest='reference_date', type=date.fromisoformat, help='通知发布时间/参考日期 YYYY-MM-DD；换算明天、下周等表达时必须指定')
+    add.add_argument('--reference-date', '--notice-date', dest='reference_date', type=date.fromisoformat, help='通知发布时间/参考日期 YYYY-MM-DD；省略时按当前北京时间日期换算相对日期')
     listing = commands.add_parser('list', help='按时间输出所有已保存事项')
     listing.add_argument('--days', type=int, help='未来 N 天内及全部逾期事项，排除时间未知事项')
     listing.add_argument('--category', choices=CHOICES, help='按分类筛选')
@@ -318,7 +335,7 @@ def main() -> int:
             show_reminders(args.file)
         else:
             if args.image:
-                text = recognize(args.image, args.ocr, args.tesseract_cmd)
+                text = recognize(args.image)
             elif args.text is not None:
                 text = args.text
             else:

@@ -31,7 +31,7 @@ def normalize_chinese_clock(text: str) -> str:
 
 
 def extract_colloquial(source: str, text: str, reference: date, reference_explicit: bool) -> list[dict] | None:
-    from extractor import CLOCK, MISSING, extract_notice, extract_time_details
+    from extractor import CLOCK, DATE, MISSING, extract_notice, extract_time_details
     from categories import classify
     from task_names import EVENT_HINT, brief_subject, short_venue, fitness_conditions
 
@@ -45,7 +45,7 @@ def extract_colloquial(source: str, text: str, reference: date, reference_explic
         starts.append(lower + separators[-1].end() if separators else (0 if index == 0 else marker.start()))
     records = []
     material = ''
-    anchor_conflict = reference_explicit and any(resolve_day(marker[0], reference)[1] for marker in markers)
+    anchor_conflict = any(resolve_day(marker[0], reference)[1] for marker in markers)
     for index, marker in enumerate(markers):
         end = starts[index + 1] if index + 1 < len(starts) else len(text)
         segment = text[starts[index]:end].strip(' ，。；;\n')
@@ -98,6 +98,21 @@ def extract_colloquial(source: str, text: str, reference: date, reference_explic
         resolved, conflict = resolve_day(local[0], reference)
         conflict = bool(conflict or anchor_conflict)
         tail = normalize_chinese_clock(segment[local.end():])
+        # “下周一下午(3月17日)4点前”：括号内月日是明确日期依据，
+        # 不能因没有发布时间而清空，也不能丢掉括号之前的“下午”。
+        explicit = re.match(r'\s*(上午|下午|晚上|中午|凌晨)?\s*\(\s*(' + DATE.pattern + r')\s*\)', tail)
+        explicit_day = None
+        invalid_explicit = False
+        if explicit:
+            parsed_date = DATE.search(explicit[0])
+            try:
+                explicit_day = date(int(parsed_date['y'] or reference.year), int(parsed_date['m']), int(parsed_date['d']))
+            except ValueError:
+                invalid_explicit = True
+            if explicit_day:
+                conflict = bool(reference_explicit and (conflict or resolved != explicit_day))
+                resolved = explicit_day
+            tail = (explicit[1] or '') + tail[explicit.end():]
         clock = CLOCK.search(tail)
         prefix = segment[:local.start()]
         normalized = prefix + f'{resolved.year}年{resolved.month}月{resolved.day}日' + tail
@@ -110,20 +125,26 @@ def extract_colloquial(source: str, text: str, reference: date, reference_explic
             expression_tail += before[0]
         row.update(details)
         row.update(time_expression=local[0] + expression_tail,
-                   relative_date_expression=local[0], reference_date=reference.isoformat() if reference_explicit else MISSING,
-                   reference_required=not reference_explicit, weekday_conflict=conflict,
+                   relative_date_expression=local[0], reference_date=reference.isoformat(),
+                   reference_source='specified' if reference_explicit else 'current_beijing',
+                   reference_required=False, weekday_conflict=conflict,
                    time_kind='relative_date')
         notes = []
         if row['task'] == MISSING:
             notes.append('事项主题无法可靠识别，请手动填写，不使用整句代替。')
-        if not reference_explicit:
-            row.update(deadline=MISSING, deadline_note='', deadline_boundary='relative', time_kind='relative')
-            notes.append('尚未指定通知发布时间；请用 --reference-date YYYY-MM-DD 或手动填写具体时间。')
+        if invalid_explicit:
+            row.update(deadline=MISSING, deadline_note='', time_kind='relative')
+            notes.append('括号内日期无效，请核对。')
+        elif explicit_day and not conflict:
+            row['time_kind'] = 'explicit_date'
+            row['time_expression'] = segment[local.start():local.end()] + explicit[0] + expression_tail
+            notes.append('使用括号内明确日期；原文未写年份时按参考年份处理，请核对年份和星期。')
         elif conflict:
             row.update(deadline=MISSING, deadline_note='', deadline_boundary='relative', time_kind='relative')
             notes.append(f'参考日期 {reference.isoformat()} 与通知中的星期标注不一致，所有相对时间需核对，不自动修正。')
         else:
-            notes.append(f'相对日期按通知发布时间 {reference.isoformat()} 换算，请核对。')
+            basis = '指定参考日期' if reference_explicit else '当前北京时间日期'
+            notes.append(f'相对日期按{basis} {reference.isoformat()} 换算；旧通知请用 --reference-date 指定原发布时间。')
         if row.get('material_inferred'):
             notes.append('纸质版按前文关联到同一材料，请核对。')
         row['time_note'] = ' '.join(notes)

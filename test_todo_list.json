@@ -299,8 +299,16 @@
     "source_segment": "活动地点：学校中心广场\n活动时间：3月28日 14:00-18:00",
     "reminder_times": [
       {
-        "label": "提前1天",
+        "label": "开始前1天",
         "time": "2026-03-27 14:00"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-03-28 14:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-28 16:00"
       }
     ],
     "reminder_note": ""
@@ -367,12 +375,16 @@
     "source_segment": "时间：3月22日(周六)19:00-21:00\n地点：图书馆报告厅\n参与方式：无需报名，直接到场即可。现场可投递简历(纸质版)，建议携带多份",
     "reminder_times": [
       {
-        "label": "提前7天",
-        "time": "2026-03-15 19:00"
+        "label": "开始前1天",
+        "time": "2026-03-21 19:00"
       },
       {
-        "label": "提前1天",
-        "time": "2026-03-21 19:00"
+        "label": "开始时间提醒",
+        "time": "2026-03-22 19:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-22 19:00"
       }
     ],
     "reminder_note": ""
@@ -450,11 +462,15 @@
     "time_note": "",
     "reminder_times": [
       {
-        "label": "提前1天",
+        "label": "开始前1天",
         "time": "2026-03-17"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-03-18"
       }
     ],
-    "reminder_note": ""
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
   },
   {
     "task": "论文盲审—上传终稿PDF",
@@ -562,15 +578,15 @@
     "prerequisite": "通过盲审",
     "reminder_times": [
       {
-        "label": "提前5天",
-        "time": "2026-04-15"
+        "label": "开始前1天",
+        "time": "2026-04-19"
       },
       {
-        "label": "提前1天",
-        "time": "2026-04-19"
+        "label": "开始时间提醒",
+        "time": "2026-04-20"
       }
     ],
-    "reminder_note": ""
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
   },
   {
     "task": "材料归档—提交纸质论文",
@@ -663,8 +679,17 @@
     "deadline_expression": "3月17日",
     "deadline_boundary": "unspecified",
     "deadline_note": "",
-    "reminder_times": [],
-    "reminder_note": "该分类尚未设置提醒策略"
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-03-16 04:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-17 02:00"
+      }
+    ],
+    "reminder_note": ""
   },
   {
     "task": "信息核对—核对个人信息",
@@ -705,15 +730,15 @@
     "time_binding": "own_action",
     "reminder_times": [
       {
-        "label": "提前7天",
-        "time": "2026-04-03"
+        "label": "开始前1天",
+        "time": "2026-04-09"
       },
       {
-        "label": "提前1天",
-        "time": "2026-04-09"
+        "label": "开始时间提醒",
+        "time": "2026-04-10"
       }
     ],
-    "reminder_note": ""
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
   },
   {
     "task": "信息核对—现场修改信息",
@@ -893,15 +918,15 @@
     "time_binding": "own_action",
     "reminder_times": [
       {
-        "label": "提前7天",
-        "time": "2026-06-03"
+        "label": "开始前1天",
+        "time": "2026-06-09"
       },
       {
-        "label": "提前1天",
-        "time": "2026-06-09"
+        "label": "开始时间提醒",
+        "time": "2026-06-10"
       }
     ],
-    "reminder_note": ""
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
   },
   {
     "task": "档案转递—领取调档函",
@@ -1300,6 +1325,1330 @@
       {
         "label": "提前1天",
         "time": "2025-04-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "2024-2025-2学期第二轮选课",
+    "deadline": "2025-03-18 18:00",
+    "submit_method": "教务系统",
+    "location": "未提及",
+    "source_text": "【教务处通知】2024-2025-2学期第二轮选课将于3月15日（周五）12:00开始，3月18日（周一）18:00结束。请全体本科生登录教务系统（jwxt.school.edu.cn）完成选课操作，逾期系统关闭不再受理。",
+    "category": "课程学业",
+    "category_candidates": [
+      "课程学业"
+    ],
+    "category_matches": {
+      "课程学业": [
+        "选课"
+      ]
+    },
+    "deadline_expression": "3月18日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "start_time": "2025-03-15 12:00",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2025-03-14 12:00"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2025-03-15 12:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2025-03-18 16:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "挑战杯院赛—申报书电子版提交",
+    "deadline": "2025-03-25 17:00",
+    "submit_method": "xiaoming@school.edu.cn；邮箱",
+    "location": "未提及",
+    "source_text": "【团委】关于举办2025年\"挑战杯\"大学生课外学术科技作品竞赛院级选拔赛的通知\n参赛团队请于3月25日17:00前将申报书（PDF版）发送至邮箱 xiaoming@school.edu.cn，邮件主题命名为\"挑战杯+团队名+负责人姓名\"。纸质版材料一式三份于3月26日12:00前交至文科楼302办公室王老师处。逾期不予受理。\n",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "挑战杯",
+        "竞赛"
+      ]
+    },
+    "deadline_expression": "3月25",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "参赛团队请于3月25日17:00前将申报书(PDF版)发送至邮箱 xiaoming@school.edu.cn，邮件主题命名为\"挑战杯+团队名+负责人姓名\"",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-03-20 17:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-03-24 17:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "挑战杯院赛—纸质材料提交",
+    "deadline": "2025-03-26 12:00",
+    "submit_method": "纸质版",
+    "location": "文科楼302办公室",
+    "source_text": "【团委】关于举办2025年\"挑战杯\"大学生课外学术科技作品竞赛院级选拔赛的通知\n参赛团队请于3月25日17:00前将申报书（PDF版）发送至邮箱 xiaoming@school.edu.cn，邮件主题命名为\"挑战杯+团队名+负责人姓名\"。纸质版材料一式三份于3月26日12:00前交至文科楼302办公室王老师处。逾期不予受理。\n",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "挑战杯",
+        "竞赛"
+      ]
+    },
+    "deadline_expression": "3月26",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "纸质版材料一式三份于3月26日12:00前交至文科楼302办公室王老师处。逾期不予受理",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-03-21 12:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-03-25 12:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "\"春日市集\"校园文化节志愿者招募报名",
+    "deadline": "2026-03-20",
+    "submit_method": "扫描附件二维码填写问卷，或前往大学生活动中心105现场报名",
+    "location": "大学生活动中心105",
+    "source_text": "【学生会】\"春日市集\"校园文化节志愿者招募\n招募人数：30人\n报名时间：即日起至3月20日\n报名方式：扫描附件二维码填写问卷，或前往大学生活动中心105现场报名\n活动地点：学校中心广场\n活动时间：3月28日 14:00-18:00\n志愿服务时长可录入第二课堂系统。\n",
+    "category": "活动实践",
+    "category_candidates": [
+      "活动实践"
+    ],
+    "category_matches": {
+      "活动实践": [
+        "志愿",
+        "文化节"
+      ]
+    },
+    "deadline_expression": "3月20日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "time_role": "报名截止",
+    "source_segment": "报名时间：即日起至3月20日\n报名方式：扫描附件二维码填写问卷，或前往大学生活动中心105现场报名",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-03-19"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "\"春日市集\"校园文化节—志愿服务活动",
+    "deadline": "2026-03-28 14:00",
+    "submit_method": "未提及",
+    "location": "学校中心广场",
+    "source_text": "【学生会】\"春日市集\"校园文化节志愿者招募\n招募人数：30人\n报名时间：即日起至3月20日\n报名方式：扫描附件二维码填写问卷，或前往大学生活动中心105现场报名\n活动地点：学校中心广场\n活动时间：3月28日 14:00-18:00\n志愿服务时长可录入第二课堂系统。\n",
+    "category": "活动实践",
+    "category_candidates": [
+      "活动实践"
+    ],
+    "category_matches": {
+      "活动实践": [
+        "志愿",
+        "文化节"
+      ]
+    },
+    "deadline_expression": "3月28日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "end_time": "2026-03-28 18:00",
+    "time_role": "活动开始",
+    "time_note": "",
+    "source_segment": "活动地点：学校中心广场\n活动时间：3月28日 14:00-18:00",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2026-03-27 14:00"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-03-28 14:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-28 16:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "获奖证书复印件(按重要性排序，不超过5页)—办理事项",
+    "deadline": "未提及",
+    "submit_method": "未提及",
+    "location": "未提及",
+    "source_text": "【学工办】关于开展2024-2025学年国家奖学金评选工作的通知\n申请同学请于4月1日（周一）前提交以下材料至辅导员处：\n1.\t《国家奖学金申请审批表》（附件1，A4纸正反面打印） \n2.\t上一学年成绩单（教务系统导出，加盖教务处公章） \n3.\t获奖证书复印件（按重要性排序，不超过5页） \n材料初审通过后另行通知答辩安排。逾期未提交视为自动放弃。",
+    "category": "行政事务",
+    "category_candidates": [
+      "课程学业",
+      "行政事务"
+    ],
+    "category_matches": {
+      "课程学业": [
+        "成绩"
+      ],
+      "行政事务": [
+        "奖学金"
+      ]
+    },
+    "deadline_expression": "",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "逾期未提交视为自动放弃",
+    "stage": "获奖证书复印件(按重要性排序，不超过5页)",
+    "requirements": "逾期未提交视为自动放弃",
+    "notice_subject": "2024-2025学年国家奖学金评选工作",
+    "time_kind": "deadline",
+    "time_note": "本动作未单独说明时间，不自动套用其它动作的期限。",
+    "time_binding": "unresolved",
+    "reminder_times": [],
+    "reminder_note": "事件时间未确定，暂不生成提醒"
+  },
+  {
+    "task": "2024-2025学年国家奖学金评选工作",
+    "deadline": "2026-03-31",
+    "submit_method": "纸质材料交辅导员处",
+    "location": "未提及",
+    "source_text": "【学工办】关于开展2024-2025学年国家奖学金评选工作的通知\n申请同学请于4月1日（周一）前提交以下材料至辅导员处：\n1.\t《国家奖学金申请审批表》（附件1，A4纸正反面打印） \n2.\t上一学年成绩单（教务系统导出，加盖教务处公章） \n3.\t获奖证书复印件（按重要性排序，不超过5页） \n材料初审通过后另行通知答辩安排。逾期未提交视为自动放弃。",
+    "category": "行政事务",
+    "category_candidates": [
+      "课程学业",
+      "行政事务"
+    ],
+    "category_matches": {
+      "课程学业": [
+        "成绩"
+      ],
+      "行政事务": [
+        "奖学金"
+      ]
+    },
+    "deadline_expression": "4月1日(周一)前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“4月1日(周一)前”按不含 2026-04-01 当日处理；最晚提交日期为 2026-03-31，未指定具体时刻。",
+    "requirements": "1.\t《国家奖学金申请审批表》(附件1，A4纸正反面打印) \n2.\t上一学年成绩单(教务系统导出，加盖教务处公章) \n3.\t获奖证书复印件(按重要性排序，不超过5页) \n材料初审通过后另行通知答辩安排。逾期未提交视为自动放弃。",
+    "reminder_times": [
+      {
+        "label": "提前3天",
+        "time": "2026-03-28"
+      }
+    ],
+    "reminder_note": "缺少具体时刻，未生成截止前2小时提醒"
+  },
+  {
+    "task": "学生宿舍空调维修",
+    "deadline": "2026-03-18 09:00",
+    "submit_method": "本楼宿管阿姨处登记；报修热线：010-87654321",
+    "location": "各宿舍楼",
+    "source_text": "【后勤集团】关于学生宿舍空调维修的通知\n3月18日至3月22日每天9:00-17:00，后勤维修组将在各宿舍楼值班，接受空调报修登记。同学可前往本楼宿管阿姨处登记，或拨打报修热线：010-87654321。紧急故障可随时联系。",
+    "category": "生活服务",
+    "category_candidates": [
+      "行政事务",
+      "生活服务"
+    ],
+    "category_matches": {
+      "行政事务": [
+        "宿舍"
+      ],
+      "生活服务": [
+        "维修",
+        "报修"
+      ]
+    },
+    "deadline_expression": "3月18日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "method_role": "报修方式",
+    "service_note": "紧急故障可随时联系",
+    "service_hours": "每天9:00-17:00",
+    "time_role": "维修开始",
+    "end_time": "2026-03-22 17:00",
+    "end_time_label": "维修结束时间",
+    "time_range_expression": "3月18日至3月22日每天9:00-17:00，后勤维修组将在各宿舍楼值班，接受空调报修登记",
+    "time_note": "",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2026-03-17 09:00"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-03-18 09:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-22 15:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "提交本班同学的心理普查问卷完成截图打包照片",
+    "deadline": "未提及",
+    "submit_method": "zhang@school.edu.cn；邮箱",
+    "location": "未提及",
+    "source_text": "📢 各位班长注意！下周一下午（3月17日）4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复！@所有人",
+    "category": "其它类别",
+    "category_candidates": [],
+    "category_matches": {},
+    "deadline_expression": "2026年11月16日",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "source_segment": "下周一下午(3月17日)4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复!@所有人",
+    "requirements": "下周一下午(3月17日)4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复!@所有人",
+    "time_role": "提交截止",
+    "method_role": "提交方式",
+    "submission_group": "本班同学的心理普查问卷完成截图打包提交",
+    "time_expression": "下周一下午(3月17日)4点前",
+    "relative_date_expression": "下周一",
+    "reference_date": "未提及",
+    "reference_required": true,
+    "weekday_conflict": false,
+    "time_kind": "relative",
+    "time_note": "尚未指定通知发布时间；请用 --reference-date YYYY-MM-DD 或手动填写具体时间。",
+    "reminder_times": [],
+    "reminder_note": "缺少通知发布时间，暂不生成相对日期提醒"
+  },
+  {
+    "task": "提交本班同学的心理普查问卷完成截图打包照片",
+    "deadline": "2026-03-17 16:00",
+    "submit_method": "zhang@school.edu.cn；邮箱",
+    "location": "未提及",
+    "source_text": "📢 各位班长注意！下周一下午（3月17日）4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复！@所有人",
+    "category": "其它类别",
+    "category_candidates": [],
+    "category_matches": {},
+    "deadline_expression": "2026年3月17日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "下周一下午(3月17日)4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复!@所有人",
+    "requirements": "下周一下午(3月17日)4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复!@所有人",
+    "time_role": "提交截止",
+    "method_role": "提交方式",
+    "submission_group": "本班同学的心理普查问卷完成截图打包提交",
+    "time_expression": "下周一下午(3月17日)下午4点前",
+    "relative_date_expression": "下周一",
+    "reference_date": "未提及",
+    "reference_required": false,
+    "weekday_conflict": false,
+    "time_kind": "explicit_date",
+    "time_note": "使用括号内明确日期；原文未写年份时按参考年份处理，请核对年份和星期。",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-03-16 16:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-17 14:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "提交本班同学的心理普查问卷完成截图打包照片",
+    "deadline": "2026-03-17 16:00",
+    "submit_method": "zhang@school.edu.cn；邮箱",
+    "location": "未提及",
+    "source_text": "📢 各位班长注意！下周一下午（3月17日）4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复！@所有人",
+    "category": "其它类别",
+    "category_candidates": [],
+    "category_matches": {},
+    "deadline_expression": "2026年3月17日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "下周一下午(3月17日)4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复!@所有人",
+    "requirements": "下周一下午(3月17日)4点前把本班同学的心理普查问卷完成截图打包发我邮箱 zhang@school.edu.cn，压缩包命名\"XX班心理普查\"。没按时交的班级会影响优秀班集体评选，收到请回复!@所有人",
+    "time_role": "提交截止",
+    "method_role": "提交方式",
+    "submission_group": "本班同学的心理普查问卷完成截图打包提交",
+    "time_expression": "下周一下午(3月17日)下午4点前",
+    "relative_date_expression": "下周一",
+    "reference_date": "未提及",
+    "reference_required": false,
+    "weekday_conflict": false,
+    "time_kind": "explicit_date",
+    "time_note": "使用括号内明确日期；原文未写年份时按参考年份处理，请核对年份和星期。",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-03-16 16:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-17 14:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "论文盲审—系统终稿提交",
+    "deadline": "2026-03-29",
+    "submit_method": "研究生管理系统",
+    "location": "未提及",
+    "source_text": "【研究生院】关于2025届毕业生论文盲审及答辩安排的通知\n一、论文盲审\n3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF（≤20MB），命名格式：学号姓名论文题目。盲审结果预计4月15日前后公布。\n二、答辩安排\n通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知。\n三、材料归档\n答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室（理科楼A201），同时上传电子版至图书馆学位论文系统。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研",
+      "生活服务"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "论文"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "3月30日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“3月30日前”按不含 2026-03-30 当日处理；最晚提交日期为 2026-03-29，未指定具体时刻。",
+    "source_segment": "3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF(≤20MB)，命名格式:学号姓名论文题目",
+    "stage": "论文盲审",
+    "requirements": "3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF(≤20MB)，命名格式:学号姓名论文题目",
+    "notice_subject": "2025届毕业生论文盲审及答辩安排",
+    "time_kind": "deadline",
+    "prerequisite": "导师审核通过",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2026-03-24"
+      },
+      {
+        "label": "提前1天",
+        "time": "2026-03-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "论文盲审—关注结果公布",
+    "deadline": "未提及",
+    "submit_method": "未提及",
+    "location": "未提及",
+    "source_text": "【研究生院】关于2025届毕业生论文盲审及答辩安排的通知\n一、论文盲审\n3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF（≤20MB），命名格式：学号姓名论文题目。盲审结果预计4月15日前后公布。\n二、答辩安排\n通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知。\n三、材料归档\n答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室（理科楼A201），同时上传电子版至图书馆学位论文系统。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研",
+      "生活服务"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "论文"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "",
+    "deadline_boundary": "approximate",
+    "deadline_note": "",
+    "source_segment": "盲审结果预计4月15日前后公布",
+    "stage": "论文盲审",
+    "requirements": "盲审结果预计4月15日前后公布",
+    "notice_subject": "2025届毕业生论文盲审及答辩安排",
+    "time_kind": "approximate",
+    "time_role": "预计公布",
+    "time_expression": "4月15日前后",
+    "time_note": "预计日期前后不是确定截止日期；待实际公布后核对。",
+    "reminder_times": [],
+    "reminder_note": "只有预计公布时间，暂不生成精确日期提醒"
+  },
+  {
+    "task": "答辩安排—参加答辩",
+    "deadline": "2026-04-20",
+    "submit_method": "参加答辩",
+    "location": "未提及",
+    "source_text": "【研究生院】关于2025届毕业生论文盲审及答辩安排的通知\n一、论文盲审\n3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF（≤20MB），命名格式：学号姓名论文题目。盲审结果预计4月15日前后公布。\n二、答辩安排\n通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知。\n三、材料归档\n答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室（理科楼A201），同时上传电子版至图书馆学位论文系统。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研",
+      "生活服务"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "论文"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "4月20日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知",
+    "stage": "答辩安排",
+    "requirements": "通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知",
+    "notice_subject": "2025届毕业生论文盲审及答辩安排",
+    "method_role": "参与方式",
+    "time_kind": "range",
+    "time_role": "答辩开始",
+    "end_time": "2026-04-30",
+    "end_time_label": "答辩结束日期",
+    "time_range_expression": "通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知",
+    "time_note": "仅给出日期范围；具体时间和地点待另行通知。",
+    "prerequisite": "通过盲审",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2026-04-19"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-04-20"
+      }
+    ],
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
+  },
+  {
+    "task": "材料归档—提交纸质论文",
+    "deadline": "未提及",
+    "submit_method": "纸质提交",
+    "location": "学院教务办公室(理科楼A201)",
+    "source_text": "【研究生院】关于2025届毕业生论文盲审及答辩安排的通知\n一、论文盲审\n3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF（≤20MB），命名格式：学号姓名论文题目。盲审结果预计4月15日前后公布。\n二、答辩安排\n通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知。\n三、材料归档\n答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室（理科楼A201），同时上传电子版至图书馆学位论文系统。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研",
+      "生活服务"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "论文"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "source_segment": "答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室(理科楼A201)",
+    "stage": "材料归档",
+    "requirements": "答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室(理科楼A201)",
+    "notice_subject": "2025届毕业生论文盲审及答辩安排",
+    "method_role": "提交方式",
+    "time_kind": "relative",
+    "time_role": "条件期限",
+    "time_expression": "答辩通过后3个工作日内",
+    "depends_on_event": "答辩通过",
+    "prerequisite": "答辩通过",
+    "relative_offset": {
+      "value": 3,
+      "unit": "工作日",
+      "relation": "within_after"
+    },
+    "time_note": "需确认实际触发日期；工作日需核对学校日历，暂不计算具体截止。",
+    "time_binding": "unresolved",
+    "reminder_times": [],
+    "reminder_note": "需确认触发日期和工作日日历，暂不生成具体日期提醒"
+  },
+  {
+    "task": "材料归档—上传电子版论文",
+    "deadline": "未提及",
+    "submit_method": "图书馆学位论文系统",
+    "location": "未提及",
+    "source_text": "【研究生院】关于2025届毕业生论文盲审及答辩安排的通知\n一、论文盲审\n3月30日前，导师审核通过的同学登录研究生管理系统上传终稿PDF（≤20MB），命名格式：学号姓名论文题目。盲审结果预计4月15日前后公布。\n二、答辩安排\n通过盲审的同学请于4月20日-4月30日期间参加答辩，具体时间地点由导师另行通知。\n三、材料归档\n答辩通过后3个工作日内，提交纸质版论文3本至学院教务办公室（理科楼A201），同时上传电子版至图书馆学位论文系统。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研",
+      "生活服务"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "论文"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "source_segment": "同时上传电子版至图书馆学位论文系统",
+    "stage": "材料归档",
+    "requirements": "同时上传电子版至图书馆学位论文系统",
+    "notice_subject": "2025届毕业生论文盲审及答辩安排",
+    "time_kind": "relative",
+    "time_role": "条件期限",
+    "time_expression": "答辩通过后3个工作日内",
+    "depends_on_event": "答辩通过",
+    "prerequisite": "答辩通过",
+    "relative_offset": {
+      "value": 3,
+      "unit": "工作日",
+      "relation": "within_after"
+    },
+    "time_note": "需确认实际触发日期；工作日需核对学校日历，暂不计算具体截止。",
+    "time_binding": "unresolved",
+    "reminder_times": [],
+    "reminder_note": "需确认触发日期和工作日日历，暂不生成具体日期提醒"
+  },
+  {
+    "task": "信息核对—核对个人信息",
+    "deadline": "2026-04-10",
+    "submit_method": "就业系统",
+    "location": "未提及",
+    "source_text": "【教务处】关于2025届毕业生毕业去向登记及去向落实材料提交的通知\n一、信息核对：请于4月10日-4月15日登录就业系统核对个人信息，有误者于4月15日17:00前持身份证至就业指导中心（行政楼108）现场修改。\n二、材料提交：签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统，纸质版交至学院学工办。\n三、档案转递：6月10日-6月20日集中办理档案转递，需调档函的同学请于5月30日前到行政楼108领取。",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "就业",
+        "毕业去向",
+        "去向登记",
+        "去向落实",
+        "档案转递",
+        "调档函"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "4月10日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "请于4月10日-4月15日登录就业系统核对个人信息",
+    "stage": "信息核对",
+    "requirements": "请于4月10日-4月15日登录就业系统核对个人信息",
+    "notice_subject": "材料提交",
+    "time_kind": "range",
+    "time_role": "核对开始",
+    "end_time": "2026-04-15",
+    "end_time_label": "核对结束日期",
+    "time_range_expression": "请于4月10日-4月15日登录就业系统核对个人信息",
+    "time_note": "日期范围不代表具体预约时刻，请核对办理安排。",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2026-04-09"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-04-10"
+      }
+    ],
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
+  },
+  {
+    "task": "信息核对—现场修改信息",
+    "deadline": "2026-04-15 17:00",
+    "submit_method": "现场修改",
+    "location": "就业指导中心(行政楼108)",
+    "source_text": "【教务处】关于2025届毕业生毕业去向登记及去向落实材料提交的通知\n一、信息核对：请于4月10日-4月15日登录就业系统核对个人信息，有误者于4月15日17:00前持身份证至就业指导中心（行政楼108）现场修改。\n二、材料提交：签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统，纸质版交至学院学工办。\n三、档案转递：6月10日-6月20日集中办理档案转递，需调档函的同学请于5月30日前到行政楼108领取。",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "就业",
+        "毕业去向",
+        "去向登记",
+        "去向落实",
+        "档案转递",
+        "调档函"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "4月15",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "有误者于4月15日17:00前持身份证至就业指导中心(行政楼108)现场修改",
+    "stage": "信息核对",
+    "requirements": "有误者于4月15日17:00前持身份证至就业指导中心(行政楼108)现场修改",
+    "notice_subject": "材料提交",
+    "time_kind": "deadline",
+    "prerequisite": "个人信息有误",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "提前7天",
+        "time": "2026-04-08 17:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2026-04-14 17:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "材料提交—上传去向证明材料",
+    "deadline": "2026-05-20 17:00",
+    "submit_method": "就业系统",
+    "location": "未提及",
+    "source_text": "【教务处】关于2025届毕业生毕业去向登记及去向落实材料提交的通知\n一、信息核对：请于4月10日-4月15日登录就业系统核对个人信息，有误者于4月15日17:00前持身份证至就业指导中心（行政楼108）现场修改。\n二、材料提交：签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统，纸质版交至学院学工办。\n三、档案转递：6月10日-6月20日集中办理档案转递，需调档函的同学请于5月30日前到行政楼108领取。",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "就业",
+        "毕业去向",
+        "去向登记",
+        "去向落实",
+        "档案转递",
+        "调档函"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "5月20",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统",
+    "stage": "材料提交",
+    "requirements": "签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统",
+    "notice_subject": "材料提交",
+    "time_kind": "deadline",
+    "time_binding": "own_action",
+    "submission_group": "材料提交—去向证明材料",
+    "reminder_times": [
+      {
+        "label": "提前7天",
+        "time": "2026-05-13 17:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2026-05-19 17:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "材料提交—提交纸质材料",
+    "deadline": "2026-05-20 17:00",
+    "submit_method": "纸质提交",
+    "location": "学院学工办",
+    "source_text": "【教务处】关于2025届毕业生毕业去向登记及去向落实材料提交的通知\n一、信息核对：请于4月10日-4月15日登录就业系统核对个人信息，有误者于4月15日17:00前持身份证至就业指导中心（行政楼108）现场修改。\n二、材料提交：签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统，纸质版交至学院学工办。\n三、档案转递：6月10日-6月20日集中办理档案转递，需调档函的同学请于5月30日前到行政楼108领取。",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "就业",
+        "毕业去向",
+        "去向登记",
+        "去向落实",
+        "档案转递",
+        "调档函"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "5月20",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "纸质版交至学院学工办",
+    "stage": "材料提交",
+    "requirements": "纸质版交至学院学工办",
+    "notice_subject": "材料提交",
+    "method_role": "提交方式",
+    "time_kind": "deadline",
+    "time_binding": "parallel_material_inferred",
+    "deadline_inferred": true,
+    "deadline_source": "签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统",
+    "submission_group": "材料提交—去向证明材料",
+    "time_note": "同阶段同句的电子/纸质材料并列提交，推定共用 2026-05-20 17:00；纸质期限并非独立明示，请核对。",
+    "reminder_times": [
+      {
+        "label": "提前7天",
+        "time": "2026-05-13 17:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2026-05-19 17:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "档案转递—办理档案转递",
+    "deadline": "2026-06-10",
+    "submit_method": "集中办理档案转递",
+    "location": "未提及",
+    "source_text": "【教务处】关于2025届毕业生毕业去向登记及去向落实材料提交的通知\n一、信息核对：请于4月10日-4月15日登录就业系统核对个人信息，有误者于4月15日17:00前持身份证至就业指导中心（行政楼108）现场修改。\n二、材料提交：签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统，纸质版交至学院学工办。\n三、档案转递：6月10日-6月20日集中办理档案转递，需调档函的同学请于5月30日前到行政楼108领取。",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "就业",
+        "毕业去向",
+        "去向登记",
+        "去向落实",
+        "档案转递",
+        "调档函"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "6月10日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "6月10日-6月20日集中办理档案转递",
+    "stage": "档案转递",
+    "requirements": "6月10日-6月20日集中办理档案转递",
+    "notice_subject": "材料提交",
+    "time_kind": "range",
+    "time_role": "转递开始",
+    "end_time": "2026-06-20",
+    "end_time_label": "转递结束日期",
+    "time_range_expression": "6月10日-6月20日集中办理档案转递",
+    "time_note": "日期范围不代表具体预约时刻，请核对办理安排。",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2026-06-09"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-06-10"
+      }
+    ],
+    "reminder_note": "开始时间仅精确到日期，具体提醒时刻待确认；缺少具体截止时刻，未生成截止前2小时提醒"
+  },
+  {
+    "task": "档案转递—领取调档函",
+    "deadline": "2026-05-29",
+    "submit_method": "现场领取",
+    "location": "行政楼108",
+    "source_text": "【教务处】关于2025届毕业生毕业去向登记及去向落实材料提交的通知\n一、信息核对：请于4月10日-4月15日登录就业系统核对个人信息，有误者于4月15日17:00前持身份证至就业指导中心（行政楼108）现场修改。\n二、材料提交：签约/升学/创业等去向证明材料请于5月20日17:00前上传至就业系统，纸质版交至学院学工办。\n三、档案转递：6月10日-6月20日集中办理档案转递，需调档函的同学请于5月30日前到行政楼108领取。",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "就业",
+        "毕业去向",
+        "去向登记",
+        "去向落实",
+        "档案转递",
+        "调档函"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "5月30日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“5月30日前”按不含 2026-05-30 当日处理；最晚提交日期为 2026-05-29，未指定具体时刻。",
+    "source_segment": "需调档函的同学请于5月30日前到行政楼108领取",
+    "stage": "档案转递",
+    "requirements": "需调档函的同学请于5月30日前到行政楼108领取",
+    "notice_subject": "材料提交",
+    "time_kind": "deadline",
+    "prerequisite": "需要调档函",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "提前7天",
+        "time": "2026-05-22"
+      },
+      {
+        "label": "提前1天",
+        "time": "2026-05-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "提交实习证明照片",
+    "deadline": "未提及",
+    "submit_method": "微信发送照片（发给通知发布者）",
+    "location": "未提及",
+    "source_text": "📢 @所有人 明天（周四）中午12点前把实习证明拍照发我微信，没交的这周五之前必须交纸质版到经管楼507，不然实习学分不给录。另外下周三下午2点有个实习分享会，想参加的在群里接龙👇",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "实习"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "2026年11月12日",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "source_segment": "📢 @所有人 明天(周四)中午12点前把实习证明拍照发我微信",
+    "requirements": "📢 @所有人 明天(周四)中午12点前把实习证明拍照发我微信",
+    "time_role": "提交截止",
+    "method_role": "提交方式",
+    "submission_group": "实习证明提交",
+    "time_expression": "明天(周四)中午12点前",
+    "relative_date_expression": "明天(周四)",
+    "reference_date": "未提及",
+    "reference_required": true,
+    "weekday_conflict": false,
+    "time_kind": "relative",
+    "time_note": "尚未指定通知发布时间；请用 --reference-date YYYY-MM-DD 或手动填写具体时间。",
+    "reminder_times": [],
+    "reminder_note": "缺少通知发布时间，暂不生成相对日期提醒"
+  },
+  {
+    "task": "提交实习证明纸质版",
+    "deadline": "未提及",
+    "submit_method": "纸质提交",
+    "location": "经管楼507",
+    "source_text": "📢 @所有人 明天（周四）中午12点前把实习证明拍照发我微信，没交的这周五之前必须交纸质版到经管楼507，不然实习学分不给录。另外下周三下午2点有个实习分享会，想参加的在群里接龙👇",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习",
+      "行政事务"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "实习"
+      ],
+      "行政事务": [
+        "证明"
+      ]
+    },
+    "deadline_expression": "2026年11月13日之前",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "source_segment": "没交的这周五之前必须交纸质版到经管楼507，不然实习学分不给录",
+    "requirements": "没交的这周五之前必须交纸质版到经管楼507，不然实习学分不给录",
+    "time_role": "提交截止",
+    "method_role": "提交方式",
+    "material_inferred": true,
+    "submission_group": "实习证明提交",
+    "consequence": "实习学分不给录",
+    "time_expression": "这周五之前",
+    "relative_date_expression": "这周五",
+    "reference_date": "未提及",
+    "reference_required": true,
+    "weekday_conflict": false,
+    "time_kind": "relative",
+    "time_note": "尚未指定通知发布时间；请用 --reference-date YYYY-MM-DD 或手动填写具体时间。 纸质版按前文关联到同一材料，请核对。",
+    "reminder_times": [],
+    "reminder_note": "缺少通知发布时间，暂不生成相对日期提醒"
+  },
+  {
+    "task": "参加实习分享会",
+    "deadline": "未提及",
+    "submit_method": "群接龙",
+    "location": "未提及",
+    "source_text": "📢 @所有人 明天（周四）中午12点前把实习证明拍照发我微信，没交的这周五之前必须交纸质版到经管楼507，不然实习学分不给录。另外下周三下午2点有个实习分享会，想参加的在群里接龙👇",
+    "category": "就业实习",
+    "category_candidates": [
+      "就业实习"
+    ],
+    "category_matches": {
+      "就业实习": [
+        "实习"
+      ]
+    },
+    "deadline_expression": "2026年11月18日",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "source_segment": "另外下周三下午2点有个实习分享会，想参加的在群里接龙👇",
+    "requirements": "另外下周三下午2点有个实习分享会，想参加的在群里接龙👇",
+    "time_role": "活动开始",
+    "method_role": "参与方式",
+    "prerequisite": "自愿参加",
+    "optional": true,
+    "time_expression": "下周三下午2点",
+    "relative_date_expression": "下周三",
+    "reference_date": "未提及",
+    "reference_required": true,
+    "weekday_conflict": false,
+    "time_kind": "relative",
+    "time_note": "尚未指定通知发布时间；请用 --reference-date YYYY-MM-DD 或手动填写具体时间。",
+    "reminder_times": [],
+    "reminder_note": "缺少通知发布时间，暂不生成相对日期提醒"
+  },
+  {
+    "task": "体测补测",
+    "deadline": "未提及",
+    "submit_method": "现场参加",
+    "location": "田径场",
+    "source_text": "体测补测：下周二下午2点，田径场。没过的同学必须来，过的不用来。",
+    "category": "课程学业",
+    "category_candidates": [
+      "课程学业"
+    ],
+    "category_matches": {
+      "课程学业": [
+        "体测",
+        "补测"
+      ]
+    },
+    "deadline_expression": "2026年11月17日",
+    "deadline_boundary": "relative",
+    "deadline_note": "",
+    "prerequisite": "体测未通过",
+    "optional": false,
+    "excluded_audience": "体测已通过者无需参加",
+    "requirements": "没过的同学必须来；过的不用来",
+    "method_role": "参与方式",
+    "source_segment": "体测补测:下周二下午2点，田径场。没过的同学必须来，过的不用来",
+    "time_role": "活动开始",
+    "time_expression": "下周二下午2点",
+    "relative_date_expression": "下周二",
+    "reference_date": "未提及",
+    "reference_required": true,
+    "weekday_conflict": false,
+    "time_kind": "relative",
+    "time_note": "尚未指定通知发布时间；请用 --reference-date YYYY-MM-DD 或手动填写具体时间。",
+    "reminder_times": [],
+    "reminder_note": "缺少通知发布时间，暂不生成相对日期提醒"
+  },
+  {
+    "task": "大学生创新创业训练计划项目申报—组建团队与选题",
+    "deadline": "2025-03-29",
+    "submit_method": "未提及",
+    "location": "未提及",
+    "source_text": "转发自辅导员：\n转发自学院通知 <<<\n【重要】2025年大学生创新创业训练计划项目申报\n1.\t3月30日前：团队组建+选题，在系统（http://cxcy.school.edu.cn）填报 \n2.\t4月15日前：提交申报书初稿给指导老师审核 \n3.\t4月30日前：系统终稿提交+纸质版交至教务处（行政楼201） \n请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "创新创业训练计划"
+      ]
+    },
+    "deadline_expression": "3月30日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“3月30日前”按不含 2025-03-30 当日处理；最晚提交日期为 2025-03-29，未指定具体时刻。",
+    "source_segment": "3月30日前，团队组建+选题",
+    "stage": "组队选题与填报",
+    "requirements": "3月30日前，团队组建+选题",
+    "notice_subject": "大学生创新创业训练计划项目申报",
+    "time_kind": "deadline",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-03-24"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-03-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "大学生创新创业训练计划项目申报—系统填报",
+    "deadline": "2025-03-29",
+    "submit_method": "系统：http://cxcy.school.edu.cn",
+    "location": "未提及",
+    "source_text": "转发自辅导员：\n转发自学院通知 <<<\n【重要】2025年大学生创新创业训练计划项目申报\n1.\t3月30日前：团队组建+选题，在系统（http://cxcy.school.edu.cn）填报 \n2.\t4月15日前：提交申报书初稿给指导老师审核 \n3.\t4月30日前：系统终稿提交+纸质版交至教务处（行政楼201） \n请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "创新创业训练计划"
+      ]
+    },
+    "deadline_expression": "3月30日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“3月30日前”按不含 2025-03-30 当日处理；最晚提交日期为 2025-03-29，未指定具体时刻。",
+    "source_segment": "在系统(http://cxcy.school.edu.cn)填报",
+    "stage": "组队选题与填报",
+    "requirements": "在系统(http://cxcy.school.edu.cn)填报",
+    "notice_subject": "大学生创新创业训练计划项目申报",
+    "time_kind": "deadline",
+    "time_binding": "stage_heading",
+    "time_note": "使用本编号安排的共同期限，请核对。",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-03-24"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-03-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "大学生创新创业训练计划项目申报—提交申报书初稿审核",
+    "deadline": "2025-04-14",
+    "submit_method": "交指导老师审核",
+    "location": "未提及",
+    "source_text": "转发自辅导员：\n转发自学院通知 <<<\n【重要】2025年大学生创新创业训练计划项目申报\n1.\t3月30日前：团队组建+选题，在系统（http://cxcy.school.edu.cn）填报 \n2.\t4月15日前：提交申报书初稿给指导老师审核 \n3.\t4月30日前：系统终稿提交+纸质版交至教务处（行政楼201） \n请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "创新创业训练计划"
+      ]
+    },
+    "deadline_expression": "4月15日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“4月15日前”按不含 2025-04-15 当日处理；最晚提交日期为 2025-04-14，未指定具体时刻。",
+    "source_segment": "4月15日前，提交申报书初稿给指导老师审核",
+    "stage": "初稿审核",
+    "requirements": "4月15日前，提交申报书初稿给指导老师审核",
+    "notice_subject": "大学生创新创业训练计划项目申报",
+    "time_kind": "deadline",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-04-09"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-04-13"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "大学生创新创业训练计划项目申报—系统终稿提交",
+    "deadline": "2025-04-29",
+    "submit_method": "系统：http://cxcy.school.edu.cn",
+    "location": "未提及",
+    "source_text": "转发自辅导员：\n转发自学院通知 <<<\n【重要】2025年大学生创新创业训练计划项目申报\n1.\t3月30日前：团队组建+选题，在系统（http://cxcy.school.edu.cn）填报 \n2.\t4月15日前：提交申报书初稿给指导老师审核 \n3.\t4月30日前：系统终稿提交+纸质版交至教务处（行政楼201） \n请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "创新创业训练计划"
+      ]
+    },
+    "deadline_expression": "4月30日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“4月30日前”按不含 2025-04-30 当日处理；最晚提交日期为 2025-04-29，未指定具体时刻。",
+    "source_segment": "4月30日前，系统终稿提交",
+    "stage": "终稿提交",
+    "requirements": "4月30日前，系统终稿提交",
+    "notice_subject": "大学生创新创业训练计划项目申报",
+    "time_kind": "deadline",
+    "time_binding": "own_action",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-04-24"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-04-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "大学生创新创业训练计划项目申报—提交纸质材料",
+    "deadline": "2025-04-29",
+    "submit_method": "纸质提交",
+    "location": "教务处(行政楼201)",
+    "source_text": "转发自辅导员：\n转发自学院通知 <<<\n【重要】2025年大学生创新创业训练计划项目申报\n1.\t3月30日前：团队组建+选题，在系统（http://cxcy.school.edu.cn）填报 \n2.\t4月15日前：提交申报书初稿给指导老师审核 \n3.\t4月30日前：系统终稿提交+纸质版交至教务处（行政楼201） \n请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "创新创业训练计划"
+      ]
+    },
+    "deadline_expression": "4月30日前",
+    "deadline_boundary": "exclusive_date",
+    "deadline_note": "原文“4月30日前”按不含 2025-04-30 当日处理；最晚提交日期为 2025-04-29，未指定具体时刻。",
+    "source_segment": "纸质版交至教务处(行政楼201)请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "stage": "终稿提交",
+    "requirements": "纸质版交至教务处(行政楼201)请各班班长通知到每位同学，逾期系统关闭 <<<",
+    "notice_subject": "大学生创新创业训练计划项目申报",
+    "method_role": "提交方式",
+    "time_kind": "deadline",
+    "time_binding": "stage_heading",
+    "time_note": "使用本编号安排的共同期限，请核对。",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-04-24"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-04-28"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "校园卡补办—提交申请",
+    "deadline": "2026-11-18 12:00",
+    "submit_method": "现场提交申请",
+    "location": "学生服务中心101室",
+    "source_text": "校园卡补办\n11月18日12:00前到学生服务中心101室提交申请，11月20日16:00前到图书馆102室领取新卡。",
+    "category": "生活服务",
+    "category_candidates": [
+      "生活服务"
+    ],
+    "category_matches": {
+      "生活服务": [
+        "图书馆",
+        "校园卡"
+      ]
+    },
+    "deadline_expression": "11月18",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "method_role": "提交方式",
+    "source_segment": "11月18日12:00前到学生服务中心101室提交申请",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-11-17 12:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "校园卡补办—领取新卡",
+    "deadline": "2026-11-20 16:00",
+    "submit_method": "现场领取",
+    "location": "图书馆102室",
+    "source_text": "校园卡补办\n11月18日12:00前到学生服务中心101室提交申请，11月20日16:00前到图书馆102室领取新卡。",
+    "category": "生活服务",
+    "category_candidates": [
+      "生活服务"
+    ],
+    "category_matches": {
+      "生活服务": [
+        "图书馆",
+        "校园卡"
+      ]
+    },
+    "deadline_expression": "11月20",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "method_role": "参与方式",
+    "source_segment": "11月20日16:00前到图书馆102室领取新卡",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-11-19 16:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "材料提交",
+    "deadline": "2026-11-18 12:00",
+    "submit_method": "纸质",
+    "location": "行政楼205办公室",
+    "source_text": "奖学金材料提交\n11月18日12:00前将纸质材料交至行政楼205办公室。咨询地点：图书馆报告厅（不接收材料）。",
+    "category": "其它类别",
+    "category_candidates": [
+      "行政事务",
+      "生活服务"
+    ],
+    "category_matches": {
+      "行政事务": [
+        "奖学金"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "11月18",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-11-17 12:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-11-18 10:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "奖学金材料提交",
+    "deadline": "2026-11-18 12:00",
+    "submit_method": "纸质",
+    "location": "行政楼205办公室",
+    "source_text": "奖学金材料提交\n11月18日12:00前将纸质材料交至行政楼205办公室。咨询地点：图书馆报告厅（不接收材料）。",
+    "category": "行政事务",
+    "category_candidates": [
+      "行政事务",
+      "生活服务"
+    ],
+    "category_matches": {
+      "行政事务": [
+        "奖学金"
+      ],
+      "生活服务": [
+        "图书馆"
+      ]
+    },
+    "deadline_expression": "11月18",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "service_note": "咨询地点：图书馆报告厅（不接收材料）",
+    "reminder_times": [
+      {
+        "label": "提前3天",
+        "time": "2026-11-15 12:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-11-18 10:00"
       }
     ],
     "reminder_note": ""
