@@ -1,0 +1,101 @@
+[
+  {
+    "task": "2024-2025-2学期第二轮选课",
+    "deadline": "2025-03-18 18:00",
+    "submit_method": "教务系统",
+    "location": "未提及",
+    "source_text": "【教务处通知】2024-2025-2学期第二轮选课将于3月15日（周五）12:00开始，3月18日\n(周一）18:00结束。请全体本科生登录教务系统（jwxt.school.edu.cn）完成选课操作，逾期系统关闭不再受理。",
+    "category": "课程学业",
+    "category_candidates": [
+      "课程学业"
+    ],
+    "category_matches": {
+      "课程学业": [
+        "选课"
+      ]
+    },
+    "deadline_expression": "3月18日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "start_time": "2025-03-15 12:00",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2025-03-14 12:00"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2025-03-15 12:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2025-03-18 16:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "挑战杯院赛—申报书电子版提交",
+    "deadline": "2025-03-25 17:00",
+    "submit_method": "xiaoming@school.edu.cn；邮箱",
+    "location": "未提及",
+    "source_text": "【团委】关于举办2025年\"挑战杯\"大学生课外学术科技作品竞赛院级选拔赛的通知\n参赛团队请于 3 月 25 日 17:00 前将申报书（PDF 版）发送至邮箱 xiaoming@school.edu.cn邮件主题命名为\"挑战杯+团队名+负责人姓名\"。纸质版材料一式三份于3月26日12:00前交至文科楼302办公室王老师处。逾期不予受理。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "挑战杯",
+        "竞赛"
+      ]
+    },
+    "deadline_expression": "3 月 25 日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "参赛团队请于 3 月 25 日 17:00 前将申报书(PDF 版)发送至邮箱 xiaoming@school.edu.cn邮件主题命名为\"挑战杯+团队名+负责人姓名\"",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-03-20 17:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-03-24 17:00"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "挑战杯院赛—纸质材料提交",
+    "deadline": "2025-03-26 12:00",
+    "submit_method": "纸质版",
+    "location": "文科楼302办公室",
+    "source_text": "【团委】关于举办2025年\"挑战杯\"大学生课外学术科技作品竞赛院级选拔赛的通知\n参赛团队请于 3 月 25 日 17:00 前将申报书（PDF 版）发送至邮箱 xiaoming@school.edu.cn邮件主题命名为\"挑战杯+团队名+负责人姓名\"。纸质版材料一式三份于3月26日12:00前交至文科楼302办公室王老师处。逾期不予受理。",
+    "category": "竞赛科研",
+    "category_candidates": [
+      "竞赛科研"
+    ],
+    "category_matches": {
+      "竞赛科研": [
+        "挑战杯",
+        "竞赛"
+      ]
+    },
+    "deadline_expression": "3月26",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "source_segment": "纸质版材料一式三份于3月26日12:00前交至文科楼302办公室王老师处。逾期不予受理",
+    "reminder_times": [
+      {
+        "label": "提前5天",
+        "time": "2025-03-21 12:00"
+      },
+      {
+        "label": "提前1天",
+        "time": "2025-03-25 12:00"
+      }
+    ],
+    "reminder_note": ""
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "task": "\"春日市集\"校园文化节志愿者招募报名",
+    "deadline": "2026-03-20",
+    "submit_method": "扫描附件二维码填写问卷，或前往大学生活动中心105现场报名",
+    "location": "大学生活动中心105",
+    "source_text": "【学生会】\"春日市集\"校园文化节志愿者招募\n招募人数：30人\n报名时间：即日起至3月20日\n报名方式：扫描附件二维码填写问卷，或前往大学生活动中心105现场报名\n活动地点：学校中心广场\n活动时间：3月28日14:00-18:00\n志愿服务时长可录入第二课堂系统。",
+    "category": "活动实践",
+    "category_candidates": [
+      "活动实践"
+    ],
+    "category_matches": {
+      "活动实践": [
+        "志愿",
+        "文化节"
+      ]
+    },
+    "deadline_expression": "3月20日",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "time_role": "报名截止",
+    "source_segment": "报名时间：即日起至3月20日\n报名方式：扫描附件二维码填写问卷，或前往大学生活动中心105现场报名",
+    "reminder_times": [
+      {
+        "label": "提前1天",
+        "time": "2026-03-19"
+      }
+    ],
+    "reminder_note": ""
+  },
+  {
+    "task": "\"春日市集\"校园文化节—志愿服务活动",
+    "deadline": "2026-03-28 14:00",
+    "submit_method": "未提及",
+    "location": "学校中心广场",
+    "source_text": "【学生会】\"春日市集\"校园文化节志愿者招募\n招募人数：30人\n报名时间：即日起至3月20日\n报名方式：扫描附件二维码填写问卷，或前往大学生活动中心105现场报名\n活动地点：学校中心广场\n活动时间：3月28日14:00-18:00\n志愿服务时长可录入第二课堂系统。",
+    "category": "活动实践",
+    "category_candidates": [
+      "活动实践"
+    ],
+    "category_matches": {
+      "活动实践": [
+        "志愿",
+        "文化节"
+      ]
+    },
+    "deadline_expression": "3月28",
+    "deadline_boundary": "unspecified",
+    "deadline_note": "",
+    "end_time": "2026-03-28 18:00",
+    "time_role": "活动开始",
+    "time_note": "",
+    "source_segment": "活动地点：学校中心广场\n活动时间：3月28日14:00-18:00",
+    "reminder_times": [
+      {
+        "label": "开始前1天",
+        "time": "2026-03-27 14:00"
+      },
+      {
+        "label": "开始时间提醒",
+        "time": "2026-03-28 14:00"
+      },
+      {
+        "label": "截止前2小时",
+        "time": "2026-03-28 16:00"
+      }
+    ],
+    "reminder_note": ""
+  }
+]
